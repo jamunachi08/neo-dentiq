@@ -1,0 +1,254 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "treatment_plan",
+  "cb1",
+  "start_date",
+  "status",
+  "clinic",
+  "sb_terms",
+  "total_amount",
+  "down_payment",
+  "financed_amount",
+  "cb2",
+  "number_of_installments",
+  "frequency",
+  "interest_percent",
+  "sb_sched",
+  "installments",
+  "sb_track",
+  "amount_paid",
+  "outstanding",
+  "cb3",
+  "next_due_date",
+  "missed_payments",
+  "sb_auth",
+  "patient_signature",
+  "auto_charge_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PP-.YYYY.-.#####",
+   "default": "PP-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nCompleted\nDefaulted\nCancelled",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "sb_terms",
+   "fieldtype": "Section Break",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "options": "reqd",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "down_payment",
+   "fieldtype": "Currency",
+   "label": "Down Payment"
+  },
+  {
+   "fieldname": "financed_amount",
+   "fieldtype": "Currency",
+   "label": "Financed Amount",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_installments",
+   "fieldtype": "Int",
+   "label": "Installments",
+   "options": "default=6",
+   "reqd": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Weekly\nBi-weekly\nMonthly",
+   "default": "Monthly"
+  },
+  {
+   "fieldname": "interest_percent",
+   "fieldtype": "Percent",
+   "label": "Interest / Admin Fee %"
+  },
+  {
+   "fieldname": "sb_sched",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "installments",
+   "fieldtype": "Table",
+   "label": "Installments",
+   "options": "Payment Plan Installment"
+  },
+  {
+   "fieldname": "sb_track",
+   "fieldtype": "Section Break",
+   "label": "Tracking"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Paid to Date",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "outstanding",
+   "fieldtype": "Currency",
+   "label": "Outstanding",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "next_due_date",
+   "fieldtype": "Date",
+   "label": "Next Due",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "missed_payments",
+   "fieldtype": "Int",
+   "label": "Missed Payments",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_auth",
+   "fieldtype": "Section Break",
+   "label": "Authorisation"
+  },
+  {
+   "fieldname": "patient_signature",
+   "fieldtype": "Signature",
+   "label": "Patient Signature"
+  },
+  {
+   "fieldname": "auto_charge_enabled",
+   "fieldtype": "Check",
+   "label": "Auto-charge Saved Card"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Revenue Cycle",
+ "name": "Patient Payment Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Insurance Coordinator",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

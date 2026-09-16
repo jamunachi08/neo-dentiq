@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "channel",
+  "cb1",
+  "purpose",
+  "sent_on",
+  "status",
+  "sb_ref",
+  "appointment",
+  "recall",
+  "cb2",
+  "treatment_plan",
+  "sales_invoice",
+  "sb_body",
+  "subject",
+  "message",
+  "response",
+  "provider_message_id",
+  "error"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "COMM-.YYYY.-.#####",
+   "default": "COMM-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "channel",
+   "fieldtype": "Select",
+   "label": "Channel",
+   "options": "WhatsApp\nSMS\nEmail\nPhone Call\nPush\nLetter",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Select",
+   "label": "Purpose",
+   "options": "Appointment Reminder\nAppointment Confirmation\nRecall\nTreatment Plan\nPost-op Instruction\nPayment Reminder\nReview Request\nMarketing\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sent_on",
+   "fieldtype": "Datetime",
+   "label": "Sent On",
+   "options": "default=Now",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Queued\nSent\nDelivered\nRead\nFailed\nReplied",
+   "default": "Queued",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_ref",
+   "fieldtype": "Section Break",
+   "label": "References"
+  },
+  {
+   "fieldname": "appointment",
+   "fieldtype": "Link",
+   "label": "Appointment",
+   "options": "Dental Appointment"
+  },
+  {
+   "fieldname": "recall",
+   "fieldtype": "Link",
+   "label": "Recall",
+   "options": "Recall Schedule"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "sb_body",
+   "fieldtype": "Section Break",
+   "label": "Message"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text Editor",
+   "label": "Message"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Small Text",
+   "label": "Patient Response"
+  },
+  {
+   "fieldname": "provider_message_id",
+   "fieldtype": "Data",
+   "label": "Provider Message ID",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "options": "read_only"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Practice",
+ "name": "Patient Communication",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

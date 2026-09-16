@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "procedure_category",
+  "cb1",
+  "is_active",
+  "language",
+  "version",
+  "sb_b",
+  "consent_body",
+  "risks",
+  "alternatives",
+  "post_op",
+  "sb_sig",
+  "require_patient_signature",
+  "require_guardian_if_minor",
+  "cb2",
+  "require_witness",
+  "require_practitioner_signature",
+  "validity_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "procedure_category",
+   "fieldtype": "Link",
+   "label": "Applies to Category",
+   "options": "Dental Procedure Category",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "English\nArabic\nFrench\nSpanish\nHindi\nGerman",
+   "default": "English",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version",
+   "options": "default=1.0"
+  },
+  {
+   "fieldname": "sb_b",
+   "fieldtype": "Section Break",
+   "label": "Body"
+  },
+  {
+   "fieldname": "consent_body",
+   "fieldtype": "Text Editor",
+   "label": "Consent Text",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "risks",
+   "fieldtype": "Text Editor",
+   "label": "Risks"
+  },
+  {
+   "fieldname": "alternatives",
+   "fieldtype": "Text Editor",
+   "label": "Alternatives"
+  },
+  {
+   "fieldname": "post_op",
+   "fieldtype": "Text Editor",
+   "label": "Post-operative Care"
+  },
+  {
+   "fieldname": "sb_sig",
+   "fieldtype": "Section Break",
+   "label": "Signature Requirements"
+  },
+  {
+   "fieldname": "require_patient_signature",
+   "fieldtype": "Check",
+   "label": "Patient Signature",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "require_guardian_if_minor",
+   "fieldtype": "Check",
+   "label": "Guardian Signature if Minor",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "require_witness",
+   "fieldtype": "Check",
+   "label": "Witness Signature"
+  },
+  {
+   "fieldname": "require_practitioner_signature",
+   "fieldtype": "Check",
+   "label": "Practitioner Signature",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "validity_days",
+   "fieldtype": "Int",
+   "label": "Validity (days)",
+   "options": "default=180"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Consent Form Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:template_name",
+ "quick_entry": 1
+}

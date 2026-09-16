@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "schedule_name",
+  "clinic",
+  "cb1",
+  "is_active",
+  "effective_from",
+  "effective_to",
+  "sb_slots",
+  "time_slots"
+ ],
+ "fields": [
+  {
+   "fieldname": "schedule_name",
+   "fieldtype": "Data",
+   "label": "Schedule Name",
+   "options": "reqd,in_list_view"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "sb_slots",
+   "fieldtype": "Section Break",
+   "label": "Weekly Slots"
+  },
+  {
+   "fieldname": "time_slots",
+   "fieldtype": "Table",
+   "label": "Time Slots",
+   "options": "Practitioner Time Slot"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Practitioner Schedule",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:schedule_name",
+ "title_field": "schedule_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "step",
+  "procedure",
+  "step_description",
+  "gap_days",
+  "is_optional"
+ ],
+ "fields": [
+  {
+   "fieldname": "step",
+   "fieldtype": "Int",
+   "label": "Step",
+   "options": "reqd,in_list_view",
+   "columns": 1
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Dental Procedure",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "step_description",
+   "fieldtype": "Data",
+   "label": "Description",
+   "options": "in_list_view",
+   "columns": 4
+  },
+  {
+   "fieldname": "gap_days",
+   "fieldtype": "Int",
+   "label": "Gap From Previous (days)",
+   "options": "width=2"
+  },
+  {
+   "fieldname": "is_optional",
+   "fieldtype": "Check",
+   "label": "Optional",
+   "options": "width=1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Clinical Pathway Step",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

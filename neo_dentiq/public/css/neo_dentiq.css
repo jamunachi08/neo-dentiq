@@ -1,0 +1,88 @@
+/* Neo Dentiq desk styles. Built on Frappe's own tokens so the app never fights
+   the host theme; colour is reserved for clinical meaning. */
+
+.ndq-odontogram-toolbar {
+	display: flex; justify-content: space-between; align-items: center;
+	gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap;
+}
+.ndq-indices { display: flex; gap: 1.25rem; font-size: var(--text-sm); }
+.ndq-indices b { color: var(--text-color); }
+.ndq-numbering select { width: 120px; }
+
+.ndq-odontogram-scroll { overflow-x: auto; padding-bottom: 0.5rem; }
+.ndq-odontogram { min-width: 700px; width: 100%; height: auto; }
+.ndq-tooth { cursor: pointer; }
+.ndq-tooth:hover polygon,
+.ndq-tooth:hover rect { stroke: var(--text-color); stroke-width: 1.5; }
+.ndq-tooth:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.ndq-tooth-label {
+	font-size: 10px; fill: var(--text-muted); font-family: var(--font-stack);
+}
+.ndq-tooth-badge { font-size: 11px; font-weight: 600; fill: var(--text-color); }
+
+.ndq-legend {
+	display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem;
+	font-size: var(--text-xs); color: var(--text-muted);
+}
+.ndq-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.ndq-legend-item i {
+	width: 10px; height: 10px; border-radius: 2px; display: inline-block;
+	border: 1px solid var(--border-color);
+}
+.ndq-legend-item i.ndq-planned {
+	background: transparent; border: 1.5px dashed #16a34a;
+}
+.ndq-tooth-detail { margin-top: 0.5rem; font-size: var(--text-sm); }
+
+/* ---------------------------------------------------------------- perio */
+.ndq-perio-arch { margin-bottom: 1.25rem; }
+.ndq-perio-scroll { overflow-x: auto; }
+.ndq-perio-table { border-collapse: collapse; font-size: var(--text-xs); }
+.ndq-perio-table th,
+.ndq-perio-table td {
+	border: 1px solid var(--border-color); padding: 0; text-align: center;
+}
+.ndq-perio-table th { padding: 2px 6px; background: var(--subtle-fg); font-weight: 500; }
+.ndq-perio-table th.sticky {
+	position: sticky; left: 0; z-index: 1; min-width: 92px; text-align: left;
+}
+.ndq-perio-input {
+	width: 34px; border: 0; background: transparent; text-align: center;
+	padding: 3px 0; color: inherit; font-variant-numeric: tabular-nums;
+}
+.ndq-perio-input:focus { outline: 2px solid var(--primary); outline-offset: -2px; }
+.ndq-perio-select { border: 0; background: transparent; width: 100%; }
+.ndq-perio-site.moderate { background: #fef3c7; }
+.ndq-perio-site.deep { background: #fee2e2; }
+.ndq-perio-site.bleeding { box-shadow: inset 0 -3px 0 #dc2626; }
+.ndq-perio-summary {
+	display: flex; gap: 1.25rem; font-size: var(--text-sm); margin-top: 0.5rem;
+	flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------- banner */
+.ndq-banner {
+	border: 1px solid var(--border-color); border-radius: var(--border-radius-md);
+	padding: 0.75rem 1rem; background: var(--subtle-fg);
+}
+.ndq-banner-head { display: flex; gap: 0.75rem; align-items: baseline; }
+.ndq-alerts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.ndq-alert {
+	font-size: var(--text-xs); padding: 2px 8px; border-radius: 999px;
+	background: #fef3c7; color: #92400e;
+}
+.ndq-alert.critical { background: #fee2e2; color: #991b1b; font-weight: 600; }
+.ndq-prophylaxis {
+	margin-top: 0.5rem; font-size: var(--text-xs); color: #991b1b;
+	border-left: 3px solid #dc2626; padding-left: 0.5rem;
+}
+.ndq-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.ndq-chip {
+	font-size: var(--text-xs); padding: 2px 8px; border-radius: 999px;
+	border: 1px solid var(--border-color); color: var(--text-muted);
+}
+.ndq-chip.warn { border-color: #f59e0b; color: #b45309; }
+
+@media (prefers-reduced-motion: reduce) {
+	.ndq-tooth, .ndq-perio-input { transition: none; }
+}

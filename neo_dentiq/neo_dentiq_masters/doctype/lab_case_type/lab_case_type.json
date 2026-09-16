@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "case_type",
+  "default_lab",
+  "cb1",
+  "turnaround_days",
+  "default_cost",
+  "requires_shade",
+  "sb_s",
+  "stages",
+  "instructions_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "case_type",
+   "fieldtype": "Data",
+   "label": "Case Type",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "default_lab",
+   "fieldtype": "Link",
+   "label": "Default Lab",
+   "options": "Dental Lab",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "turnaround_days",
+   "fieldtype": "Int",
+   "label": "Turnaround (days)",
+   "options": "default=7"
+  },
+  {
+   "fieldname": "default_cost",
+   "fieldtype": "Currency",
+   "label": "Default Lab Cost"
+  },
+  {
+   "fieldname": "requires_shade",
+   "fieldtype": "Check",
+   "label": "Requires Shade",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sb_s",
+   "fieldtype": "Section Break",
+   "label": "Required Stages"
+  },
+  {
+   "fieldname": "stages",
+   "fieldtype": "Small Text",
+   "label": "Stages",
+   "options": "desc=Comma separated, e.g. Impression,Try-in,Glaze,Delivery"
+  },
+  {
+   "fieldname": "instructions_template",
+   "fieldtype": "Text Editor",
+   "label": "Default Rx Instructions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Lab Case Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:case_type",
+ "quick_entry": 1
+}

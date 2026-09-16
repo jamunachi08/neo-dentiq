@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "medical_alert",
+  "status",
+  "diagnosed_on",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "medical_alert",
+   "fieldtype": "Link",
+   "label": "Condition",
+   "options": "Medical Alert Master",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nControlled\nResolved",
+   "default": "Active",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "diagnosed_on",
+   "fieldtype": "Date",
+   "label": "Diagnosed",
+   "options": "width=2"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes",
+   "options": "in_list_view",
+   "columns": 4
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Patient Medical Alert",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

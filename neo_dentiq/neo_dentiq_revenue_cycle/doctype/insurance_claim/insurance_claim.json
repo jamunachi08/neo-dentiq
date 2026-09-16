@@ -1,0 +1,413 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "payer",
+  "insurance_plan",
+  "policy_number",
+  "cb1",
+  "claim_date",
+  "clinic",
+  "practitioner",
+  "coverage_order",
+  "preauthorization",
+  "sb_status",
+  "status",
+  "submitted_on",
+  "payer_claim_number",
+  "cb2",
+  "aging_days",
+  "filing_deadline",
+  "resubmission_count",
+  "sb_lines",
+  "lines",
+  "sb_tot",
+  "total_billed",
+  "total_allowed",
+  "total_paid",
+  "cb3",
+  "total_patient_responsibility",
+  "total_adjustment",
+  "outstanding",
+  "sb_den",
+  "denial_reason",
+  "denial_category",
+  "cb4",
+  "appeal_date",
+  "appeal_notes",
+  "sb_erp",
+  "sales_invoice",
+  "payer_invoice",
+  "cb5",
+  "payment_entry",
+  "sb_edi",
+  "transmission_mode",
+  "edi_payload",
+  "cb6",
+  "transmission_reference",
+  "transmission_response",
+  "attachments_note"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CLM-.YYYY.-.#####",
+   "default": "CLM-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "payer",
+   "fieldtype": "Link",
+   "label": "Payer",
+   "options": "Insurance Payer",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "insurance_plan",
+   "fieldtype": "Link",
+   "label": "Plan",
+   "options": "Insurance Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy No",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "claim_date",
+   "fieldtype": "Date",
+   "label": "Claim Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Treating Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "coverage_order",
+   "fieldtype": "Select",
+   "label": "Coverage Order",
+   "options": "Primary\nSecondary\nTertiary",
+   "default": "Primary"
+  },
+  {
+   "fieldname": "preauthorization",
+   "fieldtype": "Link",
+   "label": "Pre-Authorization",
+   "options": "Insurance Pre Authorization"
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nReady to Submit\nSubmitted\nAcknowledged\nIn Review\nApproved\nPartially Approved\nDenied\nAppealed\nPaid\nClosed",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "submitted_on",
+   "fieldtype": "Datetime",
+   "label": "Submitted On",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "payer_claim_number",
+   "fieldtype": "Data",
+   "label": "Payer Claim Number"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "aging_days",
+   "fieldtype": "Int",
+   "label": "Aging (days)",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "filing_deadline",
+   "fieldtype": "Date",
+   "label": "Filing Deadline",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "resubmission_count",
+   "fieldtype": "Int",
+   "label": "Resubmissions",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_lines",
+   "fieldtype": "Section Break",
+   "label": "Claim Lines"
+  },
+  {
+   "fieldname": "lines",
+   "fieldtype": "Table",
+   "label": "Lines",
+   "options": "Insurance Claim Line"
+  },
+  {
+   "fieldname": "sb_tot",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_billed",
+   "fieldtype": "Currency",
+   "label": "Total Billed",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "total_allowed",
+   "fieldtype": "Currency",
+   "label": "Total Allowed",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_patient_responsibility",
+   "fieldtype": "Currency",
+   "label": "Patient Responsibility",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "total_adjustment",
+   "fieldtype": "Currency",
+   "label": "Contractual Write-off",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "outstanding",
+   "fieldtype": "Currency",
+   "label": "Outstanding",
+   "options": "read_only",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_den",
+   "fieldtype": "Section Break",
+   "label": "Denial & Appeal",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "denial_reason",
+   "fieldtype": "Small Text",
+   "label": "Denial Reason"
+  },
+  {
+   "fieldname": "denial_category",
+   "fieldtype": "Select",
+   "label": "Denial Category",
+   "options": "Eligibility\nMissing Information\nNot Covered\nFrequency Limit\nPre-auth Required\nCoordination of Benefits\nTimely Filing\nDowncoded\nOther"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appeal_date",
+   "fieldtype": "Date",
+   "label": "Appeal Date"
+  },
+  {
+   "fieldname": "appeal_notes",
+   "fieldtype": "Small Text",
+   "label": "Appeal Notes"
+  },
+  {
+   "fieldname": "sb_erp",
+   "fieldtype": "Section Break",
+   "label": "Accounting Links"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Patient Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "payer_invoice",
+   "fieldtype": "Link",
+   "label": "Payer Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_edi",
+   "fieldtype": "Section Break",
+   "label": "Electronic Submission",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "transmission_mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "Manual\nX12 837D\nNPHIES FHIR\nPortal",
+   "default": "Manual"
+  },
+  {
+   "fieldname": "edi_payload",
+   "fieldtype": "Code",
+   "label": "Generated Payload",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transmission_reference",
+   "fieldtype": "Data",
+   "label": "Transmission Reference",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "transmission_response",
+   "fieldtype": "Small Text",
+   "label": "Payer Response",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "attachments_note",
+   "fieldtype": "Small Text",
+   "label": "Attachments Sent",
+   "options": "desc=Radiographs, perio charts and narratives attached to the claim."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Revenue Cycle",
+ "name": "Insurance Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Insurance Coordinator",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "direction",
+  "cb1",
+  "referral_date",
+  "referring_practitioner",
+  "speciality",
+  "external_practice",
+  "sb_c",
+  "reason",
+  "urgency",
+  "cb2",
+  "status",
+  "report_received",
+  "sb_a",
+  "attachments_note",
+  "outcome"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "REF-.YYYY.-.#####",
+   "default": "REF-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "Outbound\nInbound",
+   "default": "Outbound",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referral_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "referring_practitioner",
+   "fieldtype": "Link",
+   "label": "Referring Practitioner",
+   "options": "Dental Practitioner"
+  },
+  {
+   "fieldname": "speciality",
+   "fieldtype": "Link",
+   "label": "Referred To Speciality",
+   "options": "Dental Speciality",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "external_practice",
+   "fieldtype": "Data",
+   "label": "External Practice / Practitioner"
+  },
+  {
+   "fieldname": "sb_c",
+   "fieldtype": "Section Break",
+   "label": "Clinical"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Referral",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "urgency",
+   "fieldtype": "Select",
+   "label": "Urgency",
+   "options": "Routine\nUrgent\nEmergency",
+   "default": "Routine",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSent\nAccepted\nAppointment Booked\nCompleted\nDeclined",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "report_received",
+   "fieldtype": "Check",
+   "label": "Report Received"
+  },
+  {
+   "fieldname": "sb_a",
+   "fieldtype": "Section Break",
+   "label": "Attachments & Outcome"
+  },
+  {
+   "fieldname": "attachments_note",
+   "fieldtype": "Small Text",
+   "label": "Records Shared"
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Text Editor",
+   "label": "Outcome / Report"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Practice",
+ "name": "Patient Referral",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

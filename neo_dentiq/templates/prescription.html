@@ -1,0 +1,52 @@
+<div class="ndq-rx">
+	<style>
+		.ndq-rx { font-family: var(--font-stack, sans-serif); font-size: 12px; }
+		.ndq-rx table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+		.ndq-rx th, .ndq-rx td {
+			border-bottom: 1px solid #e4e4e7; padding: 6px 4px; text-align: left;
+		}
+		.ndq-rx .head { display: flex; justify-content: space-between; }
+		.ndq-rx .sig { margin-top: 42px; border-top: 1px solid #000; width: 220px; }
+	</style>
+
+	<div class="head">
+		<div>
+			<strong>{{ doc.patient_name }}</strong><br>
+			{{ frappe.db.get_value("Patient", doc.patient, "age") }} ·
+			{{ frappe.db.get_value("Patient", doc.patient, "sex") }}<br>
+			{{ frappe.db.get_value("Patient", doc.patient, "mobile") }}
+		</div>
+		<div style="text-align:right">
+			{{ doc.name }}<br>
+			{{ frappe.format(doc.prescription_date, {"fieldtype": "Date"}) }}<br>
+			{{ doc.practitioner }}
+		</div>
+	</div>
+
+	{% if doc.diagnosis %}<p style="margin-top:10px">Diagnosis: {{ doc.diagnosis }}</p>{% endif %}
+
+	<table>
+		<thead><tr><th>Medication</th><th>Strength</th><th>Dose</th><th>Frequency</th>
+			<th>Days</th><th>Qty</th></tr></thead>
+		<tbody>
+		{% for row in doc.items %}
+			<tr>
+				<td>{{ row.medication }}</td><td>{{ row.strength or "" }}</td>
+				<td>{{ row.dosage or "" }}</td><td>{{ row.frequency or "" }}</td>
+				<td>{{ row.duration_days or "" }}</td><td>{{ row.quantity or "" }}</td>
+			</tr>
+			{% if row.instructions %}
+			<tr><td colspan="6" style="padding-top:0;color:#52525b">{{ row.instructions }}</td></tr>
+			{% endif %}
+		{% endfor %}
+		</tbody>
+	</table>
+
+	{% if doc.notes %}<div style="margin-top:12px">{{ doc.notes }}</div>{% endif %}
+
+	<div class="sig">Prescriber signature</div>
+	<p style="color:#71717a;font-size:10px">
+		Licence {{ frappe.db.get_value("Dental Practitioner", doc.practitioner,
+			"license_number") or "" }}
+	</p>
+</div>

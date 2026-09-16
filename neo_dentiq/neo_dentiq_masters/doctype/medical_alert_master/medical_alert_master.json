@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "alert_name",
+  "icd_code",
+  "cb1",
+  "severity",
+  "requires_antibiotic_prophylaxis",
+  "sb_d",
+  "dental_implications",
+  "precautions",
+  "bleeding_risk",
+  "cb2",
+  "anaesthesia_caution",
+  "avoid_vasoconstrictor",
+  "avoid_nsaids",
+  "requires_medical_clearance"
+ ],
+ "fields": [
+  {
+   "fieldname": "alert_name",
+   "fieldtype": "Data",
+   "label": "Medical Condition",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "icd_code",
+   "fieldtype": "Data",
+   "label": "ICD-10"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Clinical Impact",
+   "options": "Low\nModerate\nHigh\nCritical",
+   "default": "Moderate",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "requires_antibiotic_prophylaxis",
+   "fieldtype": "Check",
+   "label": "Requires Antibiotic Prophylaxis",
+   "options": "desc=Per AHA/NICE infective endocarditis guidance."
+  },
+  {
+   "fieldname": "sb_d",
+   "fieldtype": "Section Break",
+   "label": "Dental Management"
+  },
+  {
+   "fieldname": "dental_implications",
+   "fieldtype": "Small Text",
+   "label": "Dental Implications"
+  },
+  {
+   "fieldname": "precautions",
+   "fieldtype": "Small Text",
+   "label": "Chairside Precautions"
+  },
+  {
+   "fieldname": "bleeding_risk",
+   "fieldtype": "Check",
+   "label": "Bleeding Risk"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "anaesthesia_caution",
+   "fieldtype": "Check",
+   "label": "Anaesthesia Caution"
+  },
+  {
+   "fieldname": "avoid_vasoconstrictor",
+   "fieldtype": "Check",
+   "label": "Avoid Vasoconstrictor"
+  },
+  {
+   "fieldname": "avoid_nsaids",
+   "fieldtype": "Check",
+   "label": "Avoid NSAIDs"
+  },
+  {
+   "fieldname": "requires_medical_clearance",
+   "fieldtype": "Check",
+   "label": "Requires Medical Clearance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Medical Alert Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:alert_name",
+ "quick_entry": 1
+}

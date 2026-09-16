@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "kit_name",
+  "kit_code",
+  "cb1",
+  "is_active",
+  "sterilization_class",
+  "sb_i",
+  "items",
+  "sb_p",
+  "cycle_type",
+  "max_reuse_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "kit_name",
+   "fieldtype": "Data",
+   "label": "Kit Name",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "kit_code",
+   "fieldtype": "Data",
+   "label": "Kit Code",
+   "options": "unique"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sterilization_class",
+   "fieldtype": "Select",
+   "label": "Sterilization Class",
+   "options": "Critical\nSemi-Critical\nNon-Critical",
+   "default": "Critical",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Spaulding classification drives the required reprocessing method."
+  },
+  {
+   "fieldname": "sb_i",
+   "fieldtype": "Section Break",
+   "label": "Contents"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Instruments",
+   "options": "Instrument Kit Item"
+  },
+  {
+   "fieldname": "sb_p",
+   "fieldtype": "Section Break",
+   "label": "Reprocessing"
+  },
+  {
+   "fieldname": "cycle_type",
+   "fieldtype": "Select",
+   "label": "Required Cycle",
+   "options": "Steam 134C\nSteam 121C\nSteam 134C Vacuum\nChemical Vapour\nDry Heat\nEthylene Oxide",
+   "default": "Steam 134C Vacuum"
+  },
+  {
+   "fieldname": "max_reuse_count",
+   "fieldtype": "Int",
+   "label": "Max Reprocessing Cycles",
+   "options": "default=0",
+   "description": "0 = unlimited. Tray is retired after this many cycles."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Instrument Kit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:kit_name",
+ "quick_entry": 1
+}
