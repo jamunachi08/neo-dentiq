@@ -1,0 +1,189 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "clinic",
+  "log_date",
+  "cb1",
+  "shift",
+  "performed_by",
+  "operatory",
+  "sb_c",
+  "checks",
+  "sb_w",
+  "waterline_flushed",
+  "waterline_shock_treatment",
+  "cb2",
+  "suction_line_cleaned",
+  "waterline_cfu_test_date",
+  "sb_res",
+  "overall_result",
+  "corrective_action"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ICL-.YYYY.-.#####",
+   "default": "ICL-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "Opening\nMidday\nClosing",
+   "default": "Opening",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "performed_by",
+   "fieldtype": "Link",
+   "label": "Performed By",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "operatory",
+   "fieldtype": "Link",
+   "label": "Operatory",
+   "options": "Dental Operatory"
+  },
+  {
+   "fieldname": "sb_c",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "checks",
+   "fieldtype": "Table",
+   "label": "Checks",
+   "options": "Infection Control Check"
+  },
+  {
+   "fieldname": "sb_w",
+   "fieldtype": "Section Break",
+   "label": "Water & Suction Lines"
+  },
+  {
+   "fieldname": "waterline_flushed",
+   "fieldtype": "Check",
+   "label": "Dental Unit Waterlines Flushed"
+  },
+  {
+   "fieldname": "waterline_shock_treatment",
+   "fieldtype": "Check",
+   "label": "Shock Treatment Done"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "suction_line_cleaned",
+   "fieldtype": "Check",
+   "label": "Suction Lines Cleaned"
+  },
+  {
+   "fieldname": "waterline_cfu_test_date",
+   "fieldtype": "Date",
+   "label": "Last CFU Test"
+  },
+  {
+   "fieldname": "sb_res",
+   "fieldtype": "Section Break",
+   "label": "Result"
+  },
+  {
+   "fieldname": "overall_result",
+   "fieldtype": "Select",
+   "label": "Overall",
+   "options": "Pass\nFail",
+   "default": "Pass",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "corrective_action",
+   "fieldtype": "Small Text",
+   "label": "Corrective Action"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Infection Control Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sterilization Officer",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "quick_entry": 1
+}

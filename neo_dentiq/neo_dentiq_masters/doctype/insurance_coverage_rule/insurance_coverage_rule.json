@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "procedure_category",
+  "procedure",
+  "coverage_percent",
+  "annual_limit",
+  "frequency_limit",
+  "waiting_period_months",
+  "requires_preauth"
+ ],
+ "fields": [
+  {
+   "fieldname": "procedure_category",
+   "fieldtype": "Link",
+   "label": "Procedure Category",
+   "options": "Dental Procedure Category",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Specific Procedure",
+   "options": "Dental Procedure",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "coverage_percent",
+   "fieldtype": "Percent",
+   "label": "Coverage %",
+   "options": "default=80",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "annual_limit",
+   "fieldtype": "Currency",
+   "label": "Annual Limit",
+   "options": "width=1"
+  },
+  {
+   "fieldname": "frequency_limit",
+   "fieldtype": "Data",
+   "label": "Frequency Limit",
+   "options": "width=2",
+   "description": "e.g. 2 per year, 1 per 5 years per tooth"
+  },
+  {
+   "fieldname": "waiting_period_months",
+   "fieldtype": "Int",
+   "label": "Waiting Period (months)",
+   "options": "width=1"
+  },
+  {
+   "fieldname": "requires_preauth",
+   "fieldtype": "Check",
+   "label": "Pre-auth",
+   "options": "width=1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Insurance Coverage Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

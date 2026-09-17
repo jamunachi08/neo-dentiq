@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "medication_name",
+  "generic_name",
+  "item",
+  "cb1",
+  "drug_class",
+  "atc_code",
+  "is_active",
+  "sb_dose",
+  "default_strength",
+  "default_dosage",
+  "default_frequency",
+  "cb2",
+  "default_duration_days",
+  "route",
+  "sb_safe",
+  "is_controlled_substance",
+  "is_antibiotic",
+  "pregnancy_category",
+  "cb3",
+  "max_daily_dose",
+  "renal_adjustment_required",
+  "contraindications",
+  "warnings"
+ ],
+ "fields": [
+  {
+   "fieldname": "medication_name",
+   "fieldtype": "Data",
+   "label": "Medication",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "generic_name",
+   "fieldtype": "Data",
+   "label": "Generic Name",
+   "options": "in_list_view"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "ERPNext Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "drug_class",
+   "fieldtype": "Data",
+   "label": "Drug Class",
+   "options": "in_standard_filter"
+  },
+  {
+   "fieldname": "atc_code",
+   "fieldtype": "Data",
+   "label": "ATC Code"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sb_dose",
+   "fieldtype": "Section Break",
+   "label": "Default Dosing"
+  },
+  {
+   "fieldname": "default_strength",
+   "fieldtype": "Data",
+   "label": "Strength",
+   "options": "desc=e.g. 500 mg"
+  },
+  {
+   "fieldname": "default_dosage",
+   "fieldtype": "Data",
+   "label": "Dosage",
+   "options": "default=1 tablet"
+  },
+  {
+   "fieldname": "default_frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Once a day\nTwice a day\nThrice a day\nFour times a day\nEvery 4 hours\nEvery 6 hours\nEvery 8 hours\nAs needed",
+   "default": "Twice a day"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_duration_days",
+   "fieldtype": "Int",
+   "label": "Duration (days)",
+   "options": "default=5"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Select",
+   "label": "Route",
+   "options": "Oral\nTopical\nIntramuscular\nIntravenous\nSubmucosal\nRinse",
+   "default": "Oral"
+  },
+  {
+   "fieldname": "sb_safe",
+   "fieldtype": "Section Break",
+   "label": "Safety"
+  },
+  {
+   "fieldname": "is_controlled_substance",
+   "fieldtype": "Check",
+   "label": "Controlled Substance"
+  },
+  {
+   "fieldname": "is_antibiotic",
+   "fieldtype": "Check",
+   "label": "Antibiotic",
+   "options": "desc=Counted in antimicrobial stewardship reporting."
+  },
+  {
+   "fieldname": "pregnancy_category",
+   "fieldtype": "Select",
+   "label": "Pregnancy Category",
+   "options": "A\nB\nC\nD\nX\nUnclassified",
+   "default": "Unclassified"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_daily_dose",
+   "fieldtype": "Data",
+   "label": "Max Daily Dose"
+  },
+  {
+   "fieldname": "renal_adjustment_required",
+   "fieldtype": "Check",
+   "label": "Renal Dose Adjustment"
+  },
+  {
+   "fieldname": "contraindications",
+   "fieldtype": "Small Text",
+   "label": "Contraindications"
+  },
+  {
+   "fieldname": "warnings",
+   "fieldtype": "Small Text",
+   "label": "Warnings"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Medication Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:medication_name",
+ "title_field": "medication_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

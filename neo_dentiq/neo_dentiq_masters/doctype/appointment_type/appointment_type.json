@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "appointment_type",
+  "default_duration",
+  "cb1",
+  "colour",
+  "is_online_bookable",
+  "allow_new_patients",
+  "sb_d",
+  "default_procedure",
+  "requires_operatory_type",
+  "cb2",
+  "requires_intake_form",
+  "intake_form_template",
+  "deposit_required"
+ ],
+ "fields": [
+  {
+   "fieldname": "appointment_type",
+   "fieldtype": "Data",
+   "label": "Appointment Type",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "default_duration",
+   "fieldtype": "Int",
+   "label": "Default Duration (min)",
+   "options": "default=30",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Color",
+   "label": "Calendar Colour"
+  },
+  {
+   "fieldname": "is_online_bookable",
+   "fieldtype": "Check",
+   "label": "Bookable Online",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "allow_new_patients",
+   "fieldtype": "Check",
+   "label": "Allow New Patients",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sb_d",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_procedure",
+   "fieldtype": "Link",
+   "label": "Default Procedure",
+   "options": "Dental Procedure"
+  },
+  {
+   "fieldname": "requires_operatory_type",
+   "fieldtype": "Select",
+   "label": "Requires Operatory Type",
+   "options": "Any\nGeneral\nSurgical\nHygiene\nOrtho\nPedo\nImaging\nImplantology",
+   "default": "Any"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requires_intake_form",
+   "fieldtype": "Check",
+   "label": "Requires Intake Form"
+  },
+  {
+   "fieldname": "intake_form_template",
+   "fieldtype": "Link",
+   "label": "Intake Form Template",
+   "options": "Patient Intake Template",
+   "depends_on": "eval:doc.requires_intake_form"
+  },
+  {
+   "fieldname": "deposit_required",
+   "fieldtype": "Currency",
+   "label": "Booking Deposit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Appointment Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:appointment_type",
+ "quick_entry": 1
+}

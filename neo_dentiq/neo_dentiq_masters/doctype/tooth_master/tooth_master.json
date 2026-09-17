@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tooth_code",
+  "universal_number",
+  "palmer_notation",
+  "cb1",
+  "tooth_name",
+  "dentition",
+  "arch",
+  "quadrant",
+  "sb_anat",
+  "tooth_type",
+  "side",
+  "cb2",
+  "root_count",
+  "canal_count",
+  "surfaces"
+ ],
+ "fields": [
+  {
+   "fieldname": "tooth_code",
+   "fieldtype": "Data",
+   "label": "Tooth Code",
+   "options": "reqd,unique,in_list_view",
+   "description": "FDI notation, e.g. 11, 46, 51 (primary)."
+  },
+  {
+   "fieldname": "universal_number",
+   "fieldtype": "Data",
+   "label": "Universal Number",
+   "options": "in_list_view"
+  },
+  {
+   "fieldname": "palmer_notation",
+   "fieldtype": "Data",
+   "label": "Palmer Notation"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tooth_name",
+   "fieldtype": "Data",
+   "label": "Tooth Name",
+   "options": "reqd,in_list_view"
+  },
+  {
+   "fieldname": "dentition",
+   "fieldtype": "Select",
+   "label": "Dentition",
+   "options": "Permanent\nPrimary",
+   "default": "Permanent",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "arch",
+   "fieldtype": "Select",
+   "label": "Arch",
+   "options": "Upper\nLower",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "quadrant",
+   "fieldtype": "Int",
+   "label": "Quadrant",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "sb_anat",
+   "fieldtype": "Section Break",
+   "label": "Anatomy"
+  },
+  {
+   "fieldname": "tooth_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Incisor\nCanine\nPremolar\nMolar",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "side",
+   "fieldtype": "Select",
+   "label": "Side",
+   "options": "Right\nLeft",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "root_count",
+   "fieldtype": "Int",
+   "label": "Typical Root Count",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "canal_count",
+   "fieldtype": "Int",
+   "label": "Typical Canal Count",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "surfaces",
+   "fieldtype": "Data",
+   "label": "Applicable Surfaces",
+   "options": "desc=Comma separated, e.g. M,O,D,B,L"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Tooth Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:tooth_code",
+ "title_field": "tooth_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "tooth_name,universal_number,dentition",
+ "quick_entry": 1
+}

@@ -1,0 +1,166 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lab_name",
+  "supplier",
+  "cb1",
+  "is_active",
+  "rating",
+  "sb_c",
+  "contact_person",
+  "phone",
+  "email",
+  "cb2",
+  "default_turnaround_days",
+  "courier",
+  "accepts_digital_scan",
+  "sb_q",
+  "remake_policy",
+  "certifications"
+ ],
+ "fields": [
+  {
+   "fieldname": "lab_name",
+   "fieldtype": "Data",
+   "label": "Lab Name",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "ERPNext Supplier",
+   "options": "Supplier",
+   "description": "Lab bills flow into ERPNext Purchase Invoices against this supplier."
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Quality Rating"
+  },
+  {
+   "fieldname": "sb_c",
+   "fieldtype": "Section Break",
+   "label": "Contact & Logistics"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_turnaround_days",
+   "fieldtype": "Int",
+   "label": "Default Turnaround (days)",
+   "options": "default=7"
+  },
+  {
+   "fieldname": "courier",
+   "fieldtype": "Data",
+   "label": "Courier / Pickup"
+  },
+  {
+   "fieldname": "accepts_digital_scan",
+   "fieldtype": "Check",
+   "label": "Accepts Digital (STL/PLY) Files",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sb_q",
+   "fieldtype": "Section Break",
+   "label": "Quality",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "remake_policy",
+   "fieldtype": "Small Text",
+   "label": "Remake Policy"
+  },
+  {
+   "fieldname": "certifications",
+   "fieldtype": "Data",
+   "label": "Certifications",
+   "options": "desc=e.g. ISO 13485, CE, FDA registration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Lab",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:lab_name",
+ "quick_entry": 1
+}

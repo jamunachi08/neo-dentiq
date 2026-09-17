@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tray_code",
+  "instrument_kit",
+  "clinic",
+  "cb1",
+  "status",
+  "sterile_until",
+  "is_expired",
+  "sb_cyc",
+  "last_cycle",
+  "last_cycle_result",
+  "last_cycle_date",
+  "cb2",
+  "cycle_count",
+  "max_reuse_count",
+  "last_used_on",
+  "last_used_patient"
+ ],
+ "fields": [
+  {
+   "fieldname": "tray_code",
+   "fieldtype": "Data",
+   "label": "Tray Code",
+   "options": "reqd,unique,in_list_view",
+   "description": "Physical barcode printed on the tray / pouch."
+  },
+  {
+   "fieldname": "instrument_kit",
+   "fieldtype": "Link",
+   "label": "Kit",
+   "options": "Instrument Kit",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available (Sterile)\nIn Use\nDirty / Awaiting Reprocessing\nIn Sterilizer\nQuarantined\nRetired",
+   "default": "Available (Sterile)",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sterile_until",
+   "fieldtype": "Date",
+   "label": "Sterile Until",
+   "options": "in_list_view",
+   "description": "Shelf-life expiry of the sterile pouch."
+  },
+  {
+   "fieldname": "is_expired",
+   "fieldtype": "Check",
+   "label": "Sterility Expired",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_cyc",
+   "fieldtype": "Section Break",
+   "label": "Last Reprocessing"
+  },
+  {
+   "fieldname": "last_cycle",
+   "fieldtype": "Link",
+   "label": "Last Sterilization Cycle",
+   "options": "Sterilization Cycle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_cycle_result",
+   "fieldtype": "Select",
+   "label": "Last Cycle Result",
+   "options": "Pass\nFail\nPending",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "last_cycle_date",
+   "fieldtype": "Datetime",
+   "label": "Last Cycle Date",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cycle_count",
+   "fieldtype": "Int",
+   "label": "Total Cycles",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "max_reuse_count",
+   "fieldtype": "Int",
+   "label": "Max Cycles",
+   "options": "fetch=instrument_kit.max_reuse_count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_used_on",
+   "fieldtype": "Datetime",
+   "label": "Last Used On",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "last_used_patient",
+   "fieldtype": "Link",
+   "label": "Last Used On Patient",
+   "options": "Patient",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Instrument Tray",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sterilization Officer",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:tray_code",
+ "title_field": "tray_code",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

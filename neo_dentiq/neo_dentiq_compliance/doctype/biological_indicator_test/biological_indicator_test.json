@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sterilizer",
+  "sterilization_cycle",
+  "cb1",
+  "test_date",
+  "incubation_hours",
+  "lot_number",
+  "sb_r",
+  "result",
+  "control_result",
+  "cb2",
+  "read_by",
+  "corrective_action"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BI-.YYYY.-.#####",
+   "default": "BI-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sterilizer",
+   "fieldtype": "Link",
+   "label": "Sterilizer",
+   "options": "Sterilizer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sterilization_cycle",
+   "fieldtype": "Link",
+   "label": "Cycle",
+   "options": "Sterilization Cycle",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_date",
+   "fieldtype": "Date",
+   "label": "Test Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "incubation_hours",
+   "fieldtype": "Int",
+   "label": "Incubation (hours)",
+   "options": "default=24"
+  },
+  {
+   "fieldname": "lot_number",
+   "fieldtype": "Data",
+   "label": "Spore Strip Lot No"
+  },
+  {
+   "fieldname": "sb_r",
+   "fieldtype": "Section Break",
+   "label": "Result"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Select",
+   "label": "Result",
+   "options": "Pending\nNegative (Pass)\nPositive (Fail)",
+   "default": "Pending",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "control_result",
+   "fieldtype": "Select",
+   "label": "Control",
+   "options": "Pending\nPositive (Valid)\nNegative (Invalid Test)",
+   "default": "Pending"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "read_by",
+   "fieldtype": "Link",
+   "label": "Read By",
+   "options": "User"
+  },
+  {
+   "fieldname": "corrective_action",
+   "fieldtype": "Small Text",
+   "label": "Corrective Action",
+   "options": "depends=eval:doc.result=='Positive (Fail)'"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Biological Indicator Test",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sterilization Officer",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "quick_entry": 1
+}

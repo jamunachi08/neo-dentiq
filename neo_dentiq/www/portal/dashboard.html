@@ -1,0 +1,38 @@
+{% extends "templates/web.html" %}
+{% block title %}My dental care{% endblock %}
+
+{% block page_content %}
+<div class="ndq-portal">
+	<h1>My dental care</h1>
+	<p class="lede">Your appointments, treatment plans and statements in one place.</p>
+	<div id="ndq-dashboard"><p class="ndq-empty">Loading…</p></div>
+</div>
+
+<script>
+frappe.call({ method: "neo_dentiq.api.portal.my_dashboard" }).then(r => {
+	const d = r.message;
+	if (!d) return;
+	const el = document.getElementById("ndq-dashboard");
+	const list = (rows, render) => rows.length
+		? `<ul>${rows.map(render).join("")}</ul>`
+		: "<p class='ndq-empty'>Nothing here yet.</p>";
+
+	el.innerHTML = `
+		<div class="ndq-step"><h2>Appointments</h2>
+			${list(d.appointments, a => `<li>${frappe.datetime.str_to_user(a.appointment_date)}
+				at ${a.appointment_time} — ${a.appointment_type} with ${a.practitioner}
+				(${a.status})</li>`)}</div>
+		<div class="ndq-step"><h2>Treatment plans</h2>
+			${list(d.treatment_plans, p => `<li>${p.title} — your share
+				${format_currency(p.total_patient_portion)} (${p.status})</li>`)}</div>
+		<div class="ndq-step"><h2>Prescriptions</h2>
+			${list(d.prescriptions, p => `<li>${frappe.datetime.str_to_user(p.prescription_date)}
+				— ${p.diagnosis || "Medication"}</li>`)}</div>
+		<div class="ndq-step"><h2>Statements</h2>
+			${list(d.invoices, i => `<li>${frappe.datetime.str_to_user(i.posting_date)} —
+				${format_currency(i.grand_total)}, outstanding
+				${format_currency(i.outstanding_amount)}</li>`)}</div>
+	`;
+});
+</script>
+{% endblock %}

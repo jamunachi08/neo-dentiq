@@ -1,0 +1,261 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "payer",
+  "insurance_plan",
+  "cb1",
+  "request_date",
+  "treatment_plan",
+  "practitioner",
+  "policy_number",
+  "sb_status",
+  "status",
+  "authorization_number",
+  "cb2",
+  "approved_on",
+  "valid_till",
+  "days_pending",
+  "sb_lines",
+  "lines",
+  "sb_tot",
+  "total_requested",
+  "cb3",
+  "total_approved",
+  "sb_clin",
+  "narrative",
+  "attachments_note",
+  "payer_response"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PA-.YYYY.-.#####",
+   "default": "PA-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "payer",
+   "fieldtype": "Link",
+   "label": "Payer",
+   "options": "Insurance Payer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "insurance_plan",
+   "fieldtype": "Link",
+   "label": "Plan",
+   "options": "Insurance Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date",
+   "options": "reqd,default=Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy No"
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nIn Review\nApproved\nPartially Approved\nDenied\nExpired",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "authorization_number",
+   "fieldtype": "Data",
+   "label": "Authorization Number",
+   "options": "in_list_view"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Date",
+   "label": "Approved On"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till",
+   "options": "in_list_view"
+  },
+  {
+   "fieldname": "days_pending",
+   "fieldtype": "Int",
+   "label": "Days Pending",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_lines",
+   "fieldtype": "Section Break",
+   "label": "Requested Procedures"
+  },
+  {
+   "fieldname": "lines",
+   "fieldtype": "Table",
+   "label": "Procedures",
+   "options": "Pre Auth Line"
+  },
+  {
+   "fieldname": "sb_tot",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_requested",
+   "fieldtype": "Currency",
+   "label": "Total Requested",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_approved",
+   "fieldtype": "Currency",
+   "label": "Total Approved",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_clin",
+   "fieldtype": "Section Break",
+   "label": "Clinical Justification"
+  },
+  {
+   "fieldname": "narrative",
+   "fieldtype": "Text Editor",
+   "label": "Clinical Narrative",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "attachments_note",
+   "fieldtype": "Small Text",
+   "label": "Supporting Records"
+  },
+  {
+   "fieldname": "payer_response",
+   "fieldtype": "Small Text",
+   "label": "Payer Response"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Revenue Cycle",
+ "name": "Insurance Pre Authorization",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Insurance Coordinator",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

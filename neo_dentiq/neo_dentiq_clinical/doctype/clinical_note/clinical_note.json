@@ -1,0 +1,370 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "appointment",
+  "cb1",
+  "encounter_date",
+  "practitioner",
+  "clinic",
+  "operatory",
+  "sb_alert",
+  "medical_alert_html",
+  "sb_s",
+  "chief_complaint",
+  "history_of_present_illness",
+  "cb2",
+  "pain_score",
+  "pain_character",
+  "duration_of_symptoms",
+  "sb_o",
+  "extraoral_exam",
+  "intraoral_exam",
+  "cb3",
+  "vitality_test",
+  "percussion",
+  "palpation",
+  "radiographic_findings",
+  "sb_a",
+  "diagnoses",
+  "sb_p",
+  "plan",
+  "treatment_plan",
+  "cb4",
+  "followup_required",
+  "followup_in_days",
+  "referral_required",
+  "sb_ai",
+  "ai_transcript",
+  "ai_suggestions",
+  "sb_sign",
+  "signed_by",
+  "signed_on",
+  "amendment_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ENC-.YYYY.-.#####",
+   "default": "ENC-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "appointment",
+   "fieldtype": "Link",
+   "label": "Appointment",
+   "options": "Dental Appointment"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "encounter_date",
+   "fieldtype": "Datetime",
+   "label": "Encounter Date",
+   "options": "reqd,default=Now",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "operatory",
+   "fieldtype": "Link",
+   "label": "Operatory",
+   "options": "Dental Operatory"
+  },
+  {
+   "fieldname": "sb_alert",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "medical_alert_html",
+   "fieldtype": "HTML",
+   "label": "Alerts"
+  },
+  {
+   "fieldname": "sb_s",
+   "fieldtype": "Section Break",
+   "label": "S \u2014 Subjective"
+  },
+  {
+   "fieldname": "chief_complaint",
+   "fieldtype": "Small Text",
+   "label": "Chief Complaint",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "history_of_present_illness",
+   "fieldtype": "Text Editor",
+   "label": "History of Present Illness"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pain_score",
+   "fieldtype": "Int",
+   "label": "Pain Score (0-10)"
+  },
+  {
+   "fieldname": "pain_character",
+   "fieldtype": "Select",
+   "label": "Pain Character",
+   "options": "None\nSharp\nDull\nThrobbing\nLingering\nSpontaneous\nPressure-related"
+  },
+  {
+   "fieldname": "duration_of_symptoms",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "sb_o",
+   "fieldtype": "Section Break",
+   "label": "O \u2014 Objective"
+  },
+  {
+   "fieldname": "extraoral_exam",
+   "fieldtype": "Small Text",
+   "label": "Extraoral Examination"
+  },
+  {
+   "fieldname": "intraoral_exam",
+   "fieldtype": "Small Text",
+   "label": "Intraoral Examination"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vitality_test",
+   "fieldtype": "Select",
+   "label": "Pulp Vitality",
+   "options": "Not Tested\nNormal\nHyper-responsive\nDelayed\nNo Response"
+  },
+  {
+   "fieldname": "percussion",
+   "fieldtype": "Select",
+   "label": "Percussion",
+   "options": "Not Tested\nNegative\nPositive"
+  },
+  {
+   "fieldname": "palpation",
+   "fieldtype": "Select",
+   "label": "Palpation",
+   "options": "Not Tested\nNegative\nPositive"
+  },
+  {
+   "fieldname": "radiographic_findings",
+   "fieldtype": "Small Text",
+   "label": "Radiographic Findings"
+  },
+  {
+   "fieldname": "sb_a",
+   "fieldtype": "Section Break",
+   "label": "A \u2014 Assessment"
+  },
+  {
+   "fieldname": "diagnoses",
+   "fieldtype": "Table",
+   "label": "Diagnoses",
+   "options": "Clinical Note Diagnosis"
+  },
+  {
+   "fieldname": "sb_p",
+   "fieldtype": "Section Break",
+   "label": "P \u2014 Plan"
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Text Editor",
+   "label": "Plan"
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "followup_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Required"
+  },
+  {
+   "fieldname": "followup_in_days",
+   "fieldtype": "Int",
+   "label": "Follow-up In (days)",
+   "options": "depends=eval:doc.followup_required"
+  },
+  {
+   "fieldname": "referral_required",
+   "fieldtype": "Check",
+   "label": "Referral Required"
+  },
+  {
+   "fieldname": "sb_ai",
+   "fieldtype": "Section Break",
+   "label": "AI Clinical Copilot",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "ai_transcript",
+   "fieldtype": "Small Text",
+   "label": "Dictated Transcript",
+   "options": "desc=Paste or stream chairside dictation; the copilot structures it into SOAP."
+  },
+  {
+   "fieldname": "ai_suggestions",
+   "fieldtype": "Small Text",
+   "label": "Copilot Suggestions",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_sign",
+   "fieldtype": "Section Break",
+   "label": "Attestation"
+  },
+  {
+   "fieldname": "signed_by",
+   "fieldtype": "Link",
+   "label": "Signed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "signed_on",
+   "fieldtype": "Datetime",
+   "label": "Signed On",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "amendment_reason",
+   "fieldtype": "Small Text",
+   "label": "Amendment Reason",
+   "options": "depends=eval:doc.amended_from"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Clinical Note",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 0,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

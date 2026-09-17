@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "recall_type",
+  "interval_months",
+  "cb1",
+  "default_procedure",
+  "default_duration",
+  "is_active",
+  "sb_r",
+  "low_risk_months",
+  "moderate_risk_months",
+  "cb2",
+  "high_risk_months",
+  "reminder_lead_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "recall_type",
+   "fieldtype": "Data",
+   "label": "Recall Type",
+   "options": "reqd,unique,in_list_view"
+  },
+  {
+   "fieldname": "interval_months",
+   "fieldtype": "Int",
+   "label": "Interval (months)",
+   "options": "default=6",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_procedure",
+   "fieldtype": "Link",
+   "label": "Default Procedure",
+   "options": "Dental Procedure"
+  },
+  {
+   "fieldname": "default_duration",
+   "fieldtype": "Int",
+   "label": "Duration (min)",
+   "options": "default=45"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "sb_r",
+   "fieldtype": "Section Break",
+   "label": "Risk-Based Intervals",
+   "options": "desc=Recall interval auto-adjusts to the patient's caries/perio risk grade (NICE / ADA risk-based recall)."
+  },
+  {
+   "fieldname": "low_risk_months",
+   "fieldtype": "Int",
+   "label": "Low Risk (months)",
+   "options": "default=12"
+  },
+  {
+   "fieldname": "moderate_risk_months",
+   "fieldtype": "Int",
+   "label": "Moderate Risk (months)",
+   "options": "default=6"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "high_risk_months",
+   "fieldtype": "Int",
+   "label": "High Risk (months)",
+   "options": "default=3"
+  },
+  {
+   "fieldname": "reminder_lead_days",
+   "fieldtype": "Int",
+   "label": "Reminder Lead (days)",
+   "options": "default=14"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Recall Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:recall_type",
+ "quick_entry": 1
+}

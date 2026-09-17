@@ -1,0 +1,530 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "procedure",
+  "procedure_code",
+  "cb1",
+  "procedure_date",
+  "practitioner",
+  "assistant",
+  "clinic",
+  "operatory",
+  "sb_links",
+  "appointment",
+  "treatment_plan",
+  "cb2",
+  "treatment_plan_item",
+  "clinical_note",
+  "sb_site",
+  "tooth",
+  "surfaces",
+  "quadrant",
+  "cb3",
+  "arch",
+  "roots_treated",
+  "canals_treated",
+  "working_length",
+  "sb_anaes",
+  "anaesthesia_used",
+  "anaesthetic_agent",
+  "cb4",
+  "carpules",
+  "vasoconstrictor",
+  "sb_consent",
+  "consent_record",
+  "consent_verified",
+  "cb5",
+  "medical_clearance_on_file",
+  "prophylaxis_given",
+  "sb_trays",
+  "trays_used",
+  "sb_cons",
+  "consumables",
+  "stock_entry",
+  "cb6",
+  "material_shade",
+  "implant_record",
+  "sb_lab",
+  "lab_case",
+  "sb_out",
+  "status",
+  "outcome",
+  "complication",
+  "cb7",
+  "chair_time_minutes",
+  "post_op_instructions_given",
+  "followup_date",
+  "warranty_expiry",
+  "sb_notes",
+  "narrative",
+  "sb_bill",
+  "is_billable",
+  "rate",
+  "cb8",
+  "sales_invoice",
+  "insurance_claim"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PROC-.YYYY.-.#####",
+   "default": "PROC-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Dental Procedure",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "procedure_code",
+   "fieldtype": "Data",
+   "label": "Code",
+   "options": "fetch=procedure.procedure_code",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "procedure_date",
+   "fieldtype": "Datetime",
+   "label": "Date & Time",
+   "options": "reqd,default=Now",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "assistant",
+   "fieldtype": "Link",
+   "label": "Assistant",
+   "options": "Dental Practitioner"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "operatory",
+   "fieldtype": "Link",
+   "label": "Operatory",
+   "options": "Dental Operatory"
+  },
+  {
+   "fieldname": "sb_links",
+   "fieldtype": "Section Break",
+   "label": "Links"
+  },
+  {
+   "fieldname": "appointment",
+   "fieldtype": "Link",
+   "label": "Appointment",
+   "options": "Dental Appointment"
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "treatment_plan_item",
+   "fieldtype": "Data",
+   "label": "Treatment Plan Item Ref",
+   "options": "hidden"
+  },
+  {
+   "fieldname": "clinical_note",
+   "fieldtype": "Link",
+   "label": "Clinical Note",
+   "options": "Clinical Note"
+  },
+  {
+   "fieldname": "sb_site",
+   "fieldtype": "Section Break",
+   "label": "Site"
+  },
+  {
+   "fieldname": "tooth",
+   "fieldtype": "Link",
+   "label": "Tooth",
+   "options": "Tooth Master",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "surfaces",
+   "fieldtype": "Data",
+   "label": "Surfaces"
+  },
+  {
+   "fieldname": "quadrant",
+   "fieldtype": "Select",
+   "label": "Quadrant",
+   "options": "\nUR\nUL\nLL\nLR"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arch",
+   "fieldtype": "Select",
+   "label": "Arch",
+   "options": "\nUpper\nLower\nBoth"
+  },
+  {
+   "fieldname": "roots_treated",
+   "fieldtype": "Int",
+   "label": "Roots Treated"
+  },
+  {
+   "fieldname": "canals_treated",
+   "fieldtype": "Int",
+   "label": "Canals Treated"
+  },
+  {
+   "fieldname": "working_length",
+   "fieldtype": "Data",
+   "label": "Working Length"
+  },
+  {
+   "fieldname": "sb_anaes",
+   "fieldtype": "Section Break",
+   "label": "Anaesthesia"
+  },
+  {
+   "fieldname": "anaesthesia_used",
+   "fieldtype": "Check",
+   "label": "Anaesthesia Used"
+  },
+  {
+   "fieldname": "anaesthetic_agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Medication Master",
+   "depends_on": "eval:doc.anaesthesia_used"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "carpules",
+   "fieldtype": "Float",
+   "label": "Carpules",
+   "options": "depends=eval:doc.anaesthesia_used"
+  },
+  {
+   "fieldname": "vasoconstrictor",
+   "fieldtype": "Data",
+   "label": "Vasoconstrictor",
+   "options": "depends=eval:doc.anaesthesia_used"
+  },
+  {
+   "fieldname": "sb_consent",
+   "fieldtype": "Section Break",
+   "label": "Consent & Safety"
+  },
+  {
+   "fieldname": "consent_record",
+   "fieldtype": "Link",
+   "label": "Consent Record",
+   "options": "Consent Record"
+  },
+  {
+   "fieldname": "consent_verified",
+   "fieldtype": "Check",
+   "label": "Consent Verified",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "medical_clearance_on_file",
+   "fieldtype": "Check",
+   "label": "Medical Clearance on File"
+  },
+  {
+   "fieldname": "prophylaxis_given",
+   "fieldtype": "Check",
+   "label": "Antibiotic Prophylaxis Given"
+  },
+  {
+   "fieldname": "sb_trays",
+   "fieldtype": "Section Break",
+   "label": "Instrument Traceability"
+  },
+  {
+   "fieldname": "trays_used",
+   "fieldtype": "Table",
+   "label": "Instrument Trays Used",
+   "options": "Procedure Tray Used"
+  },
+  {
+   "fieldname": "sb_cons",
+   "fieldtype": "Section Break",
+   "label": "Consumables & Materials"
+  },
+  {
+   "fieldname": "consumables",
+   "fieldtype": "Table",
+   "label": "Consumables",
+   "options": "Procedure Consumable Used"
+  },
+  {
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_shade",
+   "fieldtype": "Data",
+   "label": "Shade"
+  },
+  {
+   "fieldname": "implant_record",
+   "fieldtype": "Link",
+   "label": "Implant Record",
+   "options": "Implant Record",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_lab",
+   "fieldtype": "Section Break",
+   "label": "Lab"
+  },
+  {
+   "fieldname": "lab_case",
+   "fieldtype": "Link",
+   "label": "Lab Case",
+   "options": "Lab Case"
+  },
+  {
+   "fieldname": "sb_out",
+   "fieldtype": "Section Break",
+   "label": "Outcome"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nAborted",
+   "default": "Completed",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "label": "Outcome",
+   "options": "Successful\nSuccessful with Complication\nFailed\nDeferred",
+   "default": "Successful"
+  },
+  {
+   "fieldname": "complication",
+   "fieldtype": "Small Text",
+   "label": "Complication",
+   "options": "depends=eval:doc.outcome!='Successful'"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chair_time_minutes",
+   "fieldtype": "Int",
+   "label": "Actual Chair Time (min)"
+  },
+  {
+   "fieldname": "post_op_instructions_given",
+   "fieldtype": "Check",
+   "label": "Post-op Instructions Given",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "followup_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Clinical Warranty Expiry",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Clinical Narrative"
+  },
+  {
+   "fieldname": "narrative",
+   "fieldtype": "Text Editor",
+   "label": "Narrative"
+  },
+  {
+   "fieldname": "sb_bill",
+   "fieldtype": "Section Break",
+   "label": "Billing"
+  },
+  {
+   "fieldname": "is_billable",
+   "fieldtype": "Check",
+   "label": "Billable",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Fee"
+  },
+  {
+   "fieldname": "cb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "insurance_claim",
+   "fieldtype": "Link",
+   "label": "Insurance Claim",
+   "options": "Insurance Claim",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Clinical Procedure",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 0,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

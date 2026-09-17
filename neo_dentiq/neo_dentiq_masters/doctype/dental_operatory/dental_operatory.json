@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operatory_name",
+  "clinic",
+  "cb1",
+  "is_active",
+  "operatory_type",
+  "sb_cap",
+  "has_xray",
+  "has_cbct",
+  "has_intraoral_scanner",
+  "cb2",
+  "has_nitrous_oxide",
+  "wheelchair_accessible",
+  "hourly_operating_cost"
+ ],
+ "fields": [
+  {
+   "fieldname": "operatory_name",
+   "fieldtype": "Data",
+   "label": "Operatory / Chair Name",
+   "options": "reqd,in_list_view"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "operatory_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "General\nSurgical\nHygiene\nOrtho\nPedo\nImaging\nImplantology",
+   "default": "General",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_cap",
+   "fieldtype": "Section Break",
+   "label": "Capability"
+  },
+  {
+   "fieldname": "has_xray",
+   "fieldtype": "Check",
+   "label": "Intraoral X-Ray",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "has_cbct",
+   "fieldtype": "Check",
+   "label": "CBCT"
+  },
+  {
+   "fieldname": "has_intraoral_scanner",
+   "fieldtype": "Check",
+   "label": "Intraoral Scanner"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "has_nitrous_oxide",
+   "fieldtype": "Check",
+   "label": "Nitrous Oxide"
+  },
+  {
+   "fieldname": "wheelchair_accessible",
+   "fieldtype": "Check",
+   "label": "Wheelchair Accessible"
+  },
+  {
+   "fieldname": "hourly_operating_cost",
+   "fieldtype": "Currency",
+   "label": "Hourly Operating Cost",
+   "options": "desc=Used for production-per-chair-hour profitability analytics."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Operatory",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:operatory_name",
+ "title_field": "operatory_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

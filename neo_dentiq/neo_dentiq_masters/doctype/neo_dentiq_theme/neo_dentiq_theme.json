@@ -1,0 +1,472 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_main",
+  "enable_theme",
+  "theme_preset",
+  "cb1",
+  "apply_to_desk",
+  "apply_to_portal",
+  "cb1b",
+  "colour_mode",
+  "font_family",
+  "sb_shape",
+  "corner_radius",
+  "cb2",
+  "density",
+  "cb2b",
+  "accent_intensity",
+  "sb_palette",
+  "primary_colour",
+  "secondary_colour",
+  "accent_colour",
+  "cb3",
+  "success_colour",
+  "warning_colour",
+  "danger_colour",
+  "info_colour",
+  "cb4",
+  "background_colour",
+  "surface_colour",
+  "text_colour",
+  "muted_text_colour",
+  "border_colour",
+  "sb_effects",
+  "colourful_sidebar",
+  "gradient_headers",
+  "coloured_status_pills",
+  "coloured_workspace_cards",
+  "cb5",
+  "colour_coded_odontogram",
+  "colour_coded_perio",
+  "colour_coded_calendar",
+  "colourful_patient_banner",
+  "cb6",
+  "animated_transitions",
+  "respect_reduced_motion",
+  "tooth_glyphs",
+  "colour_blind_safe",
+  "sb_role",
+  "role_colours",
+  "sb_module",
+  "module_colours",
+  "sb_tooth",
+  "tooth_condition_colours",
+  "tooth_status_colours",
+  "sb_status",
+  "appointment_status_colours",
+  "sb_perio",
+  "perio_colours",
+  "sb_preview",
+  "preview_html",
+  "sb_css",
+  "custom_css"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_main",
+   "fieldtype": "Section Break",
+   "label": "Theme"
+  },
+  {
+   "fieldname": "enable_theme",
+   "fieldtype": "Check",
+   "label": "Enable Neo Dentiq Theme",
+   "options": "default=1",
+   "description": "Turn the whole theme off to fall back to the stock Frappe look."
+  },
+  {
+   "fieldname": "theme_preset",
+   "fieldtype": "Select",
+   "label": "Preset",
+   "options": "Clinical Mint\nCoral Smile\nSunrise Ortho\nDeep Ocean\nBerry Bright\nMidnight Clinic\nCustom",
+   "default": "Clinical Mint",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "apply_to_desk",
+   "fieldtype": "Check",
+   "label": "Apply in Desk",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "apply_to_portal",
+   "fieldtype": "Check",
+   "label": "Apply in Patient Portal",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "cb1b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "colour_mode",
+   "fieldtype": "Select",
+   "label": "Colour Mode",
+   "options": "Follow System\nLight\nDark",
+   "default": "Follow System"
+  },
+  {
+   "fieldname": "font_family",
+   "fieldtype": "Select",
+   "label": "Typeface",
+   "options": "Inter\nNunito\nPoppins\nSource Sans 3\nSystem Default",
+   "default": "Inter"
+  },
+  {
+   "fieldname": "sb_shape",
+   "fieldtype": "Section Break",
+   "label": "Shape & Density"
+  },
+  {
+   "fieldname": "corner_radius",
+   "fieldtype": "Select",
+   "label": "Corner Radius",
+   "options": "Sharp\nSoft\nRounded\nPill",
+   "default": "Rounded"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "density",
+   "fieldtype": "Select",
+   "label": "Density",
+   "options": "Comfortable\nCompact",
+   "default": "Comfortable"
+  },
+  {
+   "fieldname": "cb2b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accent_intensity",
+   "fieldtype": "Select",
+   "label": "Colour Intensity",
+   "options": "Subtle\nBalanced\nVivid",
+   "default": "Balanced",
+   "description": "How strongly accent colour is used on surfaces, pills and headers."
+  },
+  {
+   "fieldname": "sb_palette",
+   "fieldtype": "Section Break",
+   "label": "Core Palette"
+  },
+  {
+   "fieldname": "primary_colour",
+   "fieldtype": "Color",
+   "label": "Primary",
+   "options": "default=#0D9488"
+  },
+  {
+   "fieldname": "secondary_colour",
+   "fieldtype": "Color",
+   "label": "Secondary",
+   "options": "default=#2563EB"
+  },
+  {
+   "fieldname": "accent_colour",
+   "fieldtype": "Color",
+   "label": "Accent",
+   "options": "default=#F472B6"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "success_colour",
+   "fieldtype": "Color",
+   "label": "Success",
+   "options": "default=#16A34A"
+  },
+  {
+   "fieldname": "warning_colour",
+   "fieldtype": "Color",
+   "label": "Warning",
+   "options": "default=#F59E0B"
+  },
+  {
+   "fieldname": "danger_colour",
+   "fieldtype": "Color",
+   "label": "Danger",
+   "options": "default=#DC2626"
+  },
+  {
+   "fieldname": "info_colour",
+   "fieldtype": "Color",
+   "label": "Info",
+   "options": "default=#0EA5E9"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "background_colour",
+   "fieldtype": "Color",
+   "label": "Page Background",
+   "options": "default=#F6FBFA"
+  },
+  {
+   "fieldname": "surface_colour",
+   "fieldtype": "Color",
+   "label": "Card Surface",
+   "options": "default=#FFFFFF"
+  },
+  {
+   "fieldname": "text_colour",
+   "fieldtype": "Color",
+   "label": "Text",
+   "options": "default=#0F172A"
+  },
+  {
+   "fieldname": "muted_text_colour",
+   "fieldtype": "Color",
+   "label": "Muted Text",
+   "options": "default=#64748B"
+  },
+  {
+   "fieldname": "border_colour",
+   "fieldtype": "Color",
+   "label": "Border",
+   "options": "default=#D7E9E6"
+  },
+  {
+   "fieldname": "sb_effects",
+   "fieldtype": "Section Break",
+   "label": "Visual Features",
+   "options": "desc=Every feature below can be switched on or off independently."
+  },
+  {
+   "fieldname": "colourful_sidebar",
+   "fieldtype": "Check",
+   "label": "Colourful Sidebar & Workspace Icons",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "gradient_headers",
+   "fieldtype": "Check",
+   "label": "Gradient Page Headers",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "coloured_status_pills",
+   "fieldtype": "Check",
+   "label": "Coloured Status Pills",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "coloured_workspace_cards",
+   "fieldtype": "Check",
+   "label": "Coloured Workspace Cards",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "colour_coded_odontogram",
+   "fieldtype": "Check",
+   "label": "Colour-coded Odontogram",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "colour_coded_perio",
+   "fieldtype": "Check",
+   "label": "Colour-coded Perio Grid",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "colour_coded_calendar",
+   "fieldtype": "Check",
+   "label": "Colour-coded Appointment Calendar",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "colourful_patient_banner",
+   "fieldtype": "Check",
+   "label": "Colourful Patient Alert Banner",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "animated_transitions",
+   "fieldtype": "Check",
+   "label": "Animated Transitions",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "respect_reduced_motion",
+   "fieldtype": "Check",
+   "label": "Respect 'Reduce Motion' Setting",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "tooth_glyphs",
+   "fieldtype": "Check",
+   "label": "Tooth Glyphs on Charts",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "colour_blind_safe",
+   "fieldtype": "Check",
+   "label": "Colour-blind Safe Mode",
+   "options": "default=0",
+   "description": "Adds patterns and letter codes so condition is never signalled by colour alone."
+  },
+  {
+   "fieldname": "sb_role",
+   "fieldtype": "Section Break",
+   "label": "Role Accents",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "role_colours",
+   "fieldtype": "Table",
+   "label": "Role Colours",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "sb_module",
+   "fieldtype": "Section Break",
+   "label": "Module Accents",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "module_colours",
+   "fieldtype": "Table",
+   "label": "Module Colours",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "sb_tooth",
+   "fieldtype": "Section Break",
+   "label": "Odontogram Colours"
+  },
+  {
+   "fieldname": "tooth_condition_colours",
+   "fieldtype": "Table",
+   "label": "Tooth Conditions",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "tooth_status_colours",
+   "fieldtype": "Table",
+   "label": "Tooth Statuses",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break",
+   "label": "Appointment Status Colours",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "appointment_status_colours",
+   "fieldtype": "Table",
+   "label": "Appointment Statuses",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "sb_perio",
+   "fieldtype": "Section Break",
+   "label": "Perio Depth Bands",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "perio_colours",
+   "fieldtype": "Table",
+   "label": "Probing Depth Bands",
+   "options": "Neo Dentiq Colour Rule"
+  },
+  {
+   "fieldname": "sb_preview",
+   "fieldtype": "Section Break",
+   "label": "Live Preview"
+  },
+  {
+   "fieldname": "preview_html",
+   "fieldtype": "HTML",
+   "label": "Preview"
+  },
+  {
+   "fieldname": "sb_css",
+   "fieldtype": "Section Break",
+   "label": "Advanced",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "custom_css",
+   "fieldtype": "Code",
+   "label": "Custom CSS",
+   "options": "options=CSS",
+   "description": "Injected last, so it overrides everything above."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Neo Dentiq Theme",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "issingle": 1,
+ "quick_entry": 0
+}

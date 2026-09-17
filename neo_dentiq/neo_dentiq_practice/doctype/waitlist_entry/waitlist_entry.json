@@ -1,0 +1,255 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "mobile",
+  "cb1",
+  "appointment_type",
+  "practitioner",
+  "clinic",
+  "duration",
+  "sb_pref",
+  "earliest_date",
+  "latest_date",
+  "preferred_days",
+  "cb2",
+  "preferred_time_from",
+  "preferred_time_to",
+  "can_come_within_minutes",
+  "sb_status",
+  "priority",
+  "status",
+  "cb3",
+  "offered_on",
+  "offer_count",
+  "booked_appointment",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WL-.YYYY.-.#####",
+   "default": "WL-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "options": "fetch=patient.patient_name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "fetch=patient.mobile"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appointment_type",
+   "fieldtype": "Link",
+   "label": "Appointment Type",
+   "options": "Appointment Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Preferred Practitioner",
+   "options": "Dental Practitioner",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration Needed (min)",
+   "options": "default=30"
+  },
+  {
+   "fieldname": "sb_pref",
+   "fieldtype": "Section Break",
+   "label": "Availability Window"
+  },
+  {
+   "fieldname": "earliest_date",
+   "fieldtype": "Date",
+   "label": "Earliest Date",
+   "options": "default=Today"
+  },
+  {
+   "fieldname": "latest_date",
+   "fieldtype": "Date",
+   "label": "Latest Date"
+  },
+  {
+   "fieldname": "preferred_days",
+   "fieldtype": "Small Text",
+   "label": "Preferred Days",
+   "options": "desc=Comma separated, e.g. Monday,Wednesday"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preferred_time_from",
+   "fieldtype": "Time",
+   "label": "Preferred From"
+  },
+  {
+   "fieldname": "preferred_time_to",
+   "fieldtype": "Time",
+   "label": "Preferred To"
+  },
+  {
+   "fieldname": "can_come_within_minutes",
+   "fieldtype": "Int",
+   "label": "Can Arrive Within (min)",
+   "options": "default=60",
+   "description": "Used to rank candidates when a same-day slot opens."
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Routine\nUrgent\nEmergency",
+   "default": "Routine",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOffered\nBooked\nExpired\nDeclined",
+   "default": "Active",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "offered_on",
+   "fieldtype": "Datetime",
+   "label": "Last Offered",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "offer_count",
+   "fieldtype": "Int",
+   "label": "Offers Made",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "booked_appointment",
+   "fieldtype": "Link",
+   "label": "Booked Appointment",
+   "options": "Dental Appointment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Practice",
+ "name": "Waitlist Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

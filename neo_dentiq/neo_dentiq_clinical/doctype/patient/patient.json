@@ -1,0 +1,591 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sb_basic",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "patient_name",
+  "cb1",
+  "sex",
+  "dob",
+  "age",
+  "blood_group",
+  "cb1b",
+  "image",
+  "status",
+  "sb_contact",
+  "mobile",
+  "email",
+  "preferred_contact_method",
+  "preferred_language",
+  "cb2",
+  "address_line",
+  "city",
+  "country",
+  "national_id",
+  "sb_emerg",
+  "emergency_contact_name",
+  "emergency_contact_phone",
+  "cb3",
+  "is_minor",
+  "guardian_name",
+  "guardian_relationship",
+  "sb_erp",
+  "customer",
+  "clinic",
+  "cb4",
+  "primary_practitioner",
+  "user",
+  "referral_source",
+  "referred_by_patient",
+  "sb_alert",
+  "medical_alert_html",
+  "allergies",
+  "medical_alerts",
+  "current_medications",
+  "sb_hist",
+  "medical_history",
+  "dental_history",
+  "cb5",
+  "smoking_status",
+  "alcohol_use",
+  "is_pregnant",
+  "pregnancy_week",
+  "is_bruxist",
+  "history_last_reviewed",
+  "sb_risk",
+  "caries_risk",
+  "perio_risk",
+  "cb6",
+  "no_show_score",
+  "lifetime_value",
+  "cumulative_radiation_msv",
+  "sb_ins",
+  "insurance_policies",
+  "sb_recall",
+  "recall_type",
+  "next_recall_date",
+  "cb7",
+  "last_visit_date",
+  "inactive_since_days",
+  "sb_consent",
+  "marketing_consent",
+  "data_processing_consent",
+  "cb8",
+  "photo_consent",
+  "consent_captured_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PT-.#####",
+   "default": "PT-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sb_basic",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "options": "reqd,in_list_view"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "options": "in_list_view"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "options": "read_only,in_global_search"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "label": "Sex",
+   "options": "Male\nFemale\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "options": "reqd"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "options": "read_only,in_list_view"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "cb1b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nDeceased\nTransferred",
+   "default": "Active",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sb_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "preferred_contact_method",
+   "fieldtype": "Select",
+   "label": "Preferred Contact",
+   "options": "WhatsApp\nSMS\nEmail\nPhone Call",
+   "default": "WhatsApp"
+  },
+  {
+   "fieldname": "preferred_language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "English\nArabic\nFrench\nSpanish\nHindi\nGerman",
+   "default": "English"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_line",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID / Passport",
+   "options": "unique"
+  },
+  {
+   "fieldname": "sb_emerg",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact & Guardian"
+  },
+  {
+   "fieldname": "emergency_contact_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Name"
+  },
+  {
+   "fieldname": "emergency_contact_phone",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Phone"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_minor",
+   "fieldtype": "Check",
+   "label": "Minor",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "label": "Guardian Name",
+   "options": "depends=eval:doc.is_minor"
+  },
+  {
+   "fieldname": "guardian_relationship",
+   "fieldtype": "Select",
+   "label": "Guardian Relationship",
+   "options": "Father\nMother\nLegal Guardian\nOther",
+   "depends_on": "eval:doc.is_minor"
+  },
+  {
+   "fieldname": "sb_erp",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Links"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "description": "Auto-created. All invoicing, receivables and statements flow through this Customer."
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Home Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_practitioner",
+   "fieldtype": "Link",
+   "label": "Primary Dentist",
+   "options": "Dental Practitioner",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "Portal User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "referral_source",
+   "fieldtype": "Link",
+   "label": "Referral Source",
+   "options": "Referral Source"
+  },
+  {
+   "fieldname": "referred_by_patient",
+   "fieldtype": "Link",
+   "label": "Referred By Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "sb_alert",
+   "fieldtype": "Section Break",
+   "label": "Medical Alerts"
+  },
+  {
+   "fieldname": "medical_alert_html",
+   "fieldtype": "HTML",
+   "label": "Alert Banner"
+  },
+  {
+   "fieldname": "allergies",
+   "fieldtype": "Table",
+   "label": "Allergies",
+   "options": "Patient Allergy"
+  },
+  {
+   "fieldname": "medical_alerts",
+   "fieldtype": "Table",
+   "label": "Medical Conditions",
+   "options": "Patient Medical Alert"
+  },
+  {
+   "fieldname": "current_medications",
+   "fieldtype": "Table",
+   "label": "Current Medications",
+   "options": "Patient Medication"
+  },
+  {
+   "fieldname": "sb_hist",
+   "fieldtype": "Section Break",
+   "label": "History & Habits"
+  },
+  {
+   "fieldname": "medical_history",
+   "fieldtype": "Text Editor",
+   "label": "Medical History"
+  },
+  {
+   "fieldname": "dental_history",
+   "fieldtype": "Text Editor",
+   "label": "Dental History"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "smoking_status",
+   "fieldtype": "Select",
+   "label": "Smoking",
+   "options": "Never\nFormer\nCurrent - Light\nCurrent - Heavy",
+   "default": "Never"
+  },
+  {
+   "fieldname": "alcohol_use",
+   "fieldtype": "Select",
+   "label": "Alcohol",
+   "options": "None\nOccasional\nRegular",
+   "default": "None"
+  },
+  {
+   "fieldname": "is_pregnant",
+   "fieldtype": "Check",
+   "label": "Pregnant"
+  },
+  {
+   "fieldname": "pregnancy_week",
+   "fieldtype": "Int",
+   "label": "Pregnancy Week",
+   "options": "depends=eval:doc.is_pregnant"
+  },
+  {
+   "fieldname": "is_bruxist",
+   "fieldtype": "Check",
+   "label": "Bruxism / Clenching"
+  },
+  {
+   "fieldname": "history_last_reviewed",
+   "fieldtype": "Date",
+   "label": "History Last Reviewed",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_risk",
+   "fieldtype": "Section Break",
+   "label": "Risk Profile"
+  },
+  {
+   "fieldname": "caries_risk",
+   "fieldtype": "Select",
+   "label": "Caries Risk",
+   "options": "Low\nModerate\nHigh\nExtreme",
+   "default": "Low",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "perio_risk",
+   "fieldtype": "Select",
+   "label": "Periodontal Risk",
+   "options": "Low\nModerate\nHigh",
+   "default": "Low"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_show_score",
+   "fieldtype": "Int",
+   "label": "No-Show Risk %",
+   "options": "read_only",
+   "description": "Rolling behavioural score recomputed nightly."
+  },
+  {
+   "fieldname": "lifetime_value",
+   "fieldtype": "Currency",
+   "label": "Lifetime Value",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "cumulative_radiation_msv",
+   "fieldtype": "Float",
+   "label": "Cumulative Radiation (mSv)",
+   "options": "read_only",
+   "precision": "4"
+  },
+  {
+   "fieldname": "sb_ins",
+   "fieldtype": "Section Break",
+   "label": "Insurance"
+  },
+  {
+   "fieldname": "insurance_policies",
+   "fieldtype": "Table",
+   "label": "Insurance Policies",
+   "options": "Patient Insurance Policy"
+  },
+  {
+   "fieldname": "sb_recall",
+   "fieldtype": "Section Break",
+   "label": "Recall"
+  },
+  {
+   "fieldname": "recall_type",
+   "fieldtype": "Link",
+   "label": "Recall Type",
+   "options": "Recall Type"
+  },
+  {
+   "fieldname": "next_recall_date",
+   "fieldtype": "Date",
+   "label": "Next Recall Due",
+   "options": "in_standard_filter"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_visit_date",
+   "fieldtype": "Date",
+   "label": "Last Visit",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "inactive_since_days",
+   "fieldtype": "Int",
+   "label": "Days Since Last Visit",
+   "options": "read_only"
+  },
+  {
+   "fieldname": "sb_consent",
+   "fieldtype": "Section Break",
+   "label": "Consents & Privacy",
+   "options": "collapsible"
+  },
+  {
+   "fieldname": "marketing_consent",
+   "fieldtype": "Check",
+   "label": "Marketing Consent"
+  },
+  {
+   "fieldname": "data_processing_consent",
+   "fieldtype": "Check",
+   "label": "Data Processing Consent (GDPR/PDPL)",
+   "options": "default=1"
+  },
+  {
+   "fieldname": "cb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo_consent",
+   "fieldtype": "Check",
+   "label": "Clinical Photography Consent"
+  },
+  {
+   "fieldname": "consent_captured_on",
+   "fieldtype": "Date",
+   "label": "Consent Captured On"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Patient",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "mobile,email,national_id",
+ "image_field": "image",
+ "quick_entry": 1
+}
