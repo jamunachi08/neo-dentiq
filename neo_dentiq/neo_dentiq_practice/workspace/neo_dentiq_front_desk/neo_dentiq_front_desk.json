@@ -1,0 +1,190 @@
+{
+ "charts": [
+  {
+   "chart_name": "Appointments by Status",
+   "label": "Appointments by Status"
+  },
+  {
+   "chart_name": "No Show Risk Distribution",
+   "label": "No Show Risk Distribution"
+  }
+ ],
+ "content": "[{\"id\": \"3745c68848\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"2b761c5651\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Today's Schedule\", \"col\": 3}}, {\"id\": \"5f86bfe835\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"New Patient\", \"col\": 3}}, {\"id\": \"6199f20cde\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Waitlist\", \"col\": 3}}, {\"id\": \"c537f62b31\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"6e9d3e616f\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"235813e6e6\", \"type\": \"card\", \"data\": {\"card_name\": \"Scheduling\", \"col\": 4}}, {\"id\": \"5153ed6551\", \"type\": \"card\", \"data\": {\"card_name\": \"Patients\", \"col\": 4}}, {\"id\": \"5bebc73a3e\", \"type\": \"card\", \"data\": {\"card_name\": \"Reports\", \"col\": 4}}, {\"id\": \"3886139b7b\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Insights</b></span>\", \"col\": 12}}, {\"id\": \"3d621e2d1c\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Appointments by Status\", \"col\": 6}}, {\"id\": \"62935d8a0d\", \"type\": \"chart\", \"data\": {\"chart_name\": \"No Show Risk Distribution\", \"col\": 6}}]",
+ "creation": "2026-01-01 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "calendar",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Front Desk",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scheduling",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dental Appointment",
+   "link_to": "Dental Appointment",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Waitlist Entry",
+   "link_to": "Waitlist Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recall Schedule",
+   "link_to": "Recall Schedule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Practitioner Unavailability",
+   "link_to": "Practitioner Unavailability",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patients",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient",
+   "link_to": "Patient",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Intake Response",
+   "link_to": "Patient Intake Response",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Communication",
+   "link_to": "Patient Communication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Patient Referral",
+   "link_to": "Patient Referral",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Chair Utilisation and Profitability",
+   "link_to": "Chair Utilisation and Profitability",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "No Show Risk Model Accuracy",
+   "link_to": "No Show Risk Model Accuracy",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Recall Effectiveness",
+   "link_to": "Recall Effectiveness",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Practice",
+ "name": "Neo Dentiq Front Desk",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "label": "Today's Schedule",
+   "link_to": "Dental Appointment",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "label": "New Patient",
+   "link_to": "Patient",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "label": "Waitlist",
+   "link_to": "Waitlist Entry",
+   "type": "DocType"
+  }
+ ],
+ "title": "Front Desk"
+}

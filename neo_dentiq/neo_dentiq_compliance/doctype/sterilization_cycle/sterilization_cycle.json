@@ -1,0 +1,317 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sterilizer",
+  "clinic",
+  "cycle_number",
+  "cb1",
+  "cycle_datetime",
+  "operator",
+  "cycle_type",
+  "sb_par",
+  "temperature_c",
+  "pressure_bar",
+  "hold_time_minutes",
+  "cb2",
+  "drying_time_minutes",
+  "printout_attached",
+  "sb_ind",
+  "chemical_indicator_result",
+  "biological_indicator_used",
+  "biological_indicator_result",
+  "cb3",
+  "bowie_dick_result",
+  "vacuum_leak_test",
+  "sb_res",
+  "cycle_result",
+  "failure_action",
+  "cb4",
+  "sterile_shelf_life_days",
+  "recall_triggered",
+  "affected_patients",
+  "sb_load",
+  "trays",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "STER-.YYYY.-.#####",
+   "default": "STER-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sterilizer",
+   "fieldtype": "Link",
+   "label": "Sterilizer",
+   "options": "Sterilizer",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cycle_number",
+   "fieldtype": "Data",
+   "label": "Machine Cycle Number",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cycle_datetime",
+   "fieldtype": "Datetime",
+   "label": "Cycle Date & Time",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Now"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cycle_type",
+   "fieldtype": "Select",
+   "label": "Cycle Type",
+   "options": "Steam 134C\nSteam 121C\nSteam 134C Vacuum\nChemical Vapour\nDry Heat\nEthylene Oxide",
+   "default": "Steam 134C Vacuum",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_par",
+   "fieldtype": "Section Break",
+   "label": "Cycle Parameters"
+  },
+  {
+   "fieldname": "temperature_c",
+   "fieldtype": "Float",
+   "label": "Temperature (C)",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pressure_bar",
+   "fieldtype": "Float",
+   "label": "Pressure (bar)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "hold_time_minutes",
+   "fieldtype": "Float",
+   "label": "Hold Time (min)",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "drying_time_minutes",
+   "fieldtype": "Float",
+   "label": "Drying Time (min)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "printout_attached",
+   "fieldtype": "Attach",
+   "label": "Cycle Printout / Data Log"
+  },
+  {
+   "fieldname": "sb_ind",
+   "fieldtype": "Section Break",
+   "label": "Indicator Results"
+  },
+  {
+   "fieldname": "chemical_indicator_result",
+   "fieldtype": "Select",
+   "label": "Chemical Indicator (Class 5)",
+   "options": "Pass\nFail\nNot Used",
+   "default": "Pass",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "biological_indicator_used",
+   "fieldtype": "Check",
+   "label": "Biological Indicator (Spore Test) Used"
+  },
+  {
+   "fieldname": "biological_indicator_result",
+   "fieldtype": "Select",
+   "label": "Biological Indicator Result",
+   "options": "Pending\nPass\nFail\nNot Used",
+   "default": "Not Used",
+   "depends_on": "eval:doc.biological_indicator_used"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bowie_dick_result",
+   "fieldtype": "Select",
+   "label": "Bowie-Dick / Helix Test",
+   "options": "Pass\nFail\nNot Used",
+   "default": "Not Used"
+  },
+  {
+   "fieldname": "vacuum_leak_test",
+   "fieldtype": "Select",
+   "label": "Vacuum Leak Test",
+   "options": "Pass\nFail\nNot Used",
+   "default": "Not Used"
+  },
+  {
+   "fieldname": "sb_res",
+   "fieldtype": "Section Break",
+   "label": "Cycle Result"
+  },
+  {
+   "fieldname": "cycle_result",
+   "fieldtype": "Select",
+   "label": "Cycle Result",
+   "options": "Pass\nFail\nQuarantined",
+   "default": "Pass",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "failure_action",
+   "fieldtype": "Small Text",
+   "label": "Failure Action Taken",
+   "depends_on": "eval:doc.cycle_result=='Fail'"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sterile_shelf_life_days",
+   "fieldtype": "Int",
+   "label": "Sterile Shelf Life (days)",
+   "reqd": 1,
+   "default": "30"
+  },
+  {
+   "fieldname": "recall_triggered",
+   "fieldtype": "Check",
+   "label": "Patient Recall Triggered",
+   "description": "Set automatically when a failed cycle has already been used on patients.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "affected_patients",
+   "fieldtype": "Small Text",
+   "label": "Affected Patients",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_load",
+   "fieldtype": "Section Break",
+   "label": "Load Contents"
+  },
+  {
+   "fieldname": "trays",
+   "fieldtype": "Table",
+   "label": "Trays in Load",
+   "options": "Sterilization Cycle Tray"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Sterilization Cycle",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1,
+   "hidden": 0
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Sterilization Cycle",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Sterilization Officer",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 0,
+   "amend": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "quick_entry": 1
+}

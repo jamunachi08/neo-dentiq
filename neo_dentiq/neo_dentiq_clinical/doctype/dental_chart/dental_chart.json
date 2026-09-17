@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "cb1",
+  "dentition",
+  "numbering_system",
+  "last_charted_on",
+  "sb_chart",
+  "odontogram_html",
+  "sb_teeth",
+  "teeth",
+  "sb_sum",
+  "dmft_score",
+  "decayed_count",
+  "cb2",
+  "missing_count",
+  "filled_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dentition",
+   "fieldtype": "Select",
+   "label": "Dentition",
+   "options": "Permanent\nPrimary\nMixed",
+   "default": "Permanent",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "numbering_system",
+   "fieldtype": "Select",
+   "label": "Numbering",
+   "options": "FDI\nUniversal\nPalmer",
+   "default": "FDI"
+  },
+  {
+   "fieldname": "last_charted_on",
+   "fieldtype": "Date",
+   "label": "Last Charted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_chart",
+   "fieldtype": "Section Break",
+   "label": "Odontogram"
+  },
+  {
+   "fieldname": "odontogram_html",
+   "fieldtype": "HTML",
+   "label": "Odontogram"
+  },
+  {
+   "fieldname": "sb_teeth",
+   "fieldtype": "Section Break",
+   "label": "Tooth Records",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "teeth",
+   "fieldtype": "Table",
+   "label": "Teeth",
+   "options": "Tooth Chart Entry"
+  },
+  {
+   "fieldname": "sb_sum",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "dmft_score",
+   "fieldtype": "Int",
+   "label": "DMFT Score",
+   "description": "Decayed-Missing-Filled Teeth index (WHO).",
+   "read_only": 1
+  },
+  {
+   "fieldname": "decayed_count",
+   "fieldtype": "Int",
+   "label": "Decayed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "missing_count",
+   "fieldtype": "Int",
+   "label": "Missing",
+   "read_only": 1
+  },
+  {
+   "fieldname": "filled_count",
+   "fieldtype": "Int",
+   "label": "Filled",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Dental Chart",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "format:CHART-{patient}",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

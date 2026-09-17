@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "medication_a",
+  "medication_b",
+  "allergy",
+  "cb1",
+  "severity",
+  "is_active",
+  "sb_d",
+  "effect",
+  "management",
+  "reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "medication_a",
+   "fieldtype": "Link",
+   "label": "Medication A",
+   "options": "Medication Master",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "medication_b",
+   "fieldtype": "Link",
+   "label": "Medication B",
+   "options": "Medication Master",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "allergy",
+   "fieldtype": "Link",
+   "label": "Or Allergy",
+   "options": "Allergy Master",
+   "in_list_view": 1,
+   "description": "Use either Medication B or an Allergy to define the counterparty."
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "Minor\nModerate\nSevere\nContraindicated",
+   "default": "Moderate",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_d",
+   "fieldtype": "Section Break",
+   "label": "Clinical Effect"
+  },
+  {
+   "fieldname": "effect",
+   "fieldtype": "Small Text",
+   "label": "Effect",
+   "reqd": 1
+  },
+  {
+   "fieldname": "management",
+   "fieldtype": "Small Text",
+   "label": "Management / Alternative"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Drug Interaction Rule",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "hash",
+ "title_field": "effect",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

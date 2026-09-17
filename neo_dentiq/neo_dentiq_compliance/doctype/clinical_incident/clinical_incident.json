@@ -1,0 +1,239 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "incident_datetime",
+  "clinic",
+  "patient",
+  "cb1",
+  "incident_type",
+  "severity",
+  "reported_by",
+  "practitioner",
+  "sb_d",
+  "description",
+  "immediate_action",
+  "sb_rca",
+  "root_cause",
+  "contributing_factors",
+  "cb2",
+  "corrective_action",
+  "preventive_action",
+  "sb_s",
+  "status",
+  "patient_informed",
+  "cb3",
+  "reportable_to_authority",
+  "authority_reference",
+  "closed_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "INC-.YYYY.-.#####",
+   "default": "INC-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "incident_datetime",
+   "fieldtype": "Datetime",
+   "label": "Incident Date & Time",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Now"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Adverse Drug Reaction\nMedical Emergency\nWrong Site / Wrong Tooth\nInstrument Breakage\nAspiration / Ingestion\nNeedle-stick Injury\nSterilization Failure\nEquipment Failure\nData Breach\nPatient Fall\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "Near Miss\nMinor\nModerate\nMajor\nSentinel Event",
+   "default": "Minor",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner Involved",
+   "options": "Dental Practitioner"
+  },
+  {
+   "fieldname": "sb_d",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "What Happened",
+   "reqd": 1
+  },
+  {
+   "fieldname": "immediate_action",
+   "fieldtype": "Text Editor",
+   "label": "Immediate Action Taken"
+  },
+  {
+   "fieldname": "sb_rca",
+   "fieldtype": "Section Break",
+   "label": "Root Cause & Learning"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Small Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "contributing_factors",
+   "fieldtype": "Small Text",
+   "label": "Contributing Factors"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "corrective_action",
+   "fieldtype": "Small Text",
+   "label": "Corrective Action"
+  },
+  {
+   "fieldname": "preventive_action",
+   "fieldtype": "Small Text",
+   "label": "Preventive Action"
+  },
+  {
+   "fieldname": "sb_s",
+   "fieldtype": "Section Break",
+   "label": "Status & Reporting"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nUnder Investigation\nAction Taken\nClosed",
+   "default": "Open",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "patient_informed",
+   "fieldtype": "Check",
+   "label": "Patient Informed (Duty of Candour)"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reportable_to_authority",
+   "fieldtype": "Check",
+   "label": "Reportable to Regulator"
+  },
+  {
+   "fieldname": "authority_reference",
+   "fieldtype": "Data",
+   "label": "Authority Reference",
+   "depends_on": "eval:doc.reportable_to_authority"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Clinical Incident",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sterilization Officer",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "quick_entry": 1
+}

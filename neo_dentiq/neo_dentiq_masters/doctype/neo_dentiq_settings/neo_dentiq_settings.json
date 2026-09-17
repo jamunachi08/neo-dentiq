@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_clinic",
+  "default_clinic",
+  "default_company",
+  "tooth_numbering_system",
+  "cb1",
+  "default_currency",
+  "default_price_list",
+  "patient_naming_series",
+  "sb_sched",
+  "slot_granularity_minutes",
+  "min_booking_lead_minutes",
+  "max_booking_horizon_days",
+  "allow_double_booking",
+  "cb2",
+  "enable_smart_overbooking",
+  "overbook_risk_threshold",
+  "auto_fill_from_waitlist",
+  "no_show_fee_item",
+  "sb_clin",
+  "require_consent_before_procedure",
+  "require_medical_history_review_days",
+  "enable_drug_interaction_check",
+  "block_on_severe_interaction",
+  "cb3",
+  "auto_create_dental_chart",
+  "enable_perio_auto_staging",
+  "default_recall_type",
+  "sb_stock",
+  "auto_consume_stock_on_procedure",
+  "default_consumption_warehouse",
+  "enforce_sterilization_traceability",
+  "cb4",
+  "enforce_udi_capture",
+  "expired_stock_block",
+  "sb_rcm",
+  "auto_create_sales_invoice",
+  "default_income_account",
+  "default_cost_center",
+  "cb5",
+  "insurance_regime",
+  "enable_zatca_einvoice",
+  "sb_comm",
+  "enable_recall_automation",
+  "reminder_offsets_hours",
+  "cb6",
+  "whatsapp_enabled",
+  "sms_enabled",
+  "email_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_clinic",
+   "fieldtype": "Section Break",
+   "label": "Practice Defaults"
+  },
+  {
+   "fieldname": "default_clinic",
+   "fieldtype": "Link",
+   "label": "Default Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "default_company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tooth_numbering_system",
+   "fieldtype": "Select",
+   "label": "Tooth Numbering System",
+   "options": "FDI\nUniversal\nPalmer",
+   "default": "FDI",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "default_price_list",
+   "fieldtype": "Link",
+   "label": "Default Fee Schedule",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "patient_naming_series",
+   "fieldtype": "Data",
+   "label": "Patient Naming Series",
+   "default": "PT-.#####"
+  },
+  {
+   "fieldname": "sb_sched",
+   "fieldtype": "Section Break",
+   "label": "Scheduling"
+  },
+  {
+   "fieldname": "slot_granularity_minutes",
+   "fieldtype": "Int",
+   "label": "Slot Granularity (min)",
+   "default": "10"
+  },
+  {
+   "fieldname": "min_booking_lead_minutes",
+   "fieldtype": "Int",
+   "label": "Minimum Booking Lead (min)",
+   "default": "30"
+  },
+  {
+   "fieldname": "max_booking_horizon_days",
+   "fieldtype": "Int",
+   "label": "Booking Horizon (days)",
+   "default": "180"
+  },
+  {
+   "fieldname": "allow_double_booking",
+   "fieldtype": "Check",
+   "label": "Allow Double Booking",
+   "default": "0"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enable_smart_overbooking",
+   "fieldtype": "Check",
+   "label": "Enable AI Smart Overbooking",
+   "default": "1"
+  },
+  {
+   "fieldname": "overbook_risk_threshold",
+   "fieldtype": "Int",
+   "label": "Overbook when No-Show Risk % >",
+   "depends_on": "eval:doc.enable_smart_overbooking",
+   "default": "55"
+  },
+  {
+   "fieldname": "auto_fill_from_waitlist",
+   "fieldtype": "Check",
+   "label": "Auto-Fill Cancellations from Waitlist",
+   "default": "1"
+  },
+  {
+   "fieldname": "no_show_fee_item",
+   "fieldtype": "Link",
+   "label": "No-Show Fee Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "sb_clin",
+   "fieldtype": "Section Break",
+   "label": "Clinical"
+  },
+  {
+   "fieldname": "require_consent_before_procedure",
+   "fieldtype": "Check",
+   "label": "Block Procedure Without Signed Consent",
+   "default": "1"
+  },
+  {
+   "fieldname": "require_medical_history_review_days",
+   "fieldtype": "Int",
+   "label": "Re-confirm Medical History Every (days)",
+   "default": "180"
+  },
+  {
+   "fieldname": "enable_drug_interaction_check",
+   "fieldtype": "Check",
+   "label": "Enable Drug Interaction & Allergy Check",
+   "default": "1"
+  },
+  {
+   "fieldname": "block_on_severe_interaction",
+   "fieldtype": "Check",
+   "label": "Block Prescription on Severe Interaction",
+   "default": "1"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "auto_create_dental_chart",
+   "fieldtype": "Check",
+   "label": "Auto-create Dental Chart for New Patient",
+   "default": "1"
+  },
+  {
+   "fieldname": "enable_perio_auto_staging",
+   "fieldtype": "Check",
+   "label": "Auto-compute AAP Perio Stage & Grade",
+   "default": "1"
+  },
+  {
+   "fieldname": "default_recall_type",
+   "fieldtype": "Link",
+   "label": "Default Recall Type",
+   "options": "Recall Type"
+  },
+  {
+   "fieldname": "sb_stock",
+   "fieldtype": "Section Break",
+   "label": "Inventory & Traceability"
+  },
+  {
+   "fieldname": "auto_consume_stock_on_procedure",
+   "fieldtype": "Check",
+   "label": "Auto-Consume Consumables on Procedure",
+   "default": "1"
+  },
+  {
+   "fieldname": "default_consumption_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Chairside Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "enforce_sterilization_traceability",
+   "fieldtype": "Check",
+   "label": "Enforce Sterilization Traceability",
+   "description": "Blocks procedure submission unless every instrument tray used has a passed sterilization cycle.",
+   "default": "1"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enforce_udi_capture",
+   "fieldtype": "Check",
+   "label": "Require UDI / Lot Capture for Implants",
+   "default": "1"
+  },
+  {
+   "fieldname": "expired_stock_block",
+   "fieldtype": "Check",
+   "label": "Block Expired Batch Usage",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_rcm",
+   "fieldtype": "Section Break",
+   "label": "Revenue Cycle"
+  },
+  {
+   "fieldname": "auto_create_sales_invoice",
+   "fieldtype": "Check",
+   "label": "Auto-create Sales Invoice on Procedure Submit",
+   "default": "1"
+  },
+  {
+   "fieldname": "default_income_account",
+   "fieldtype": "Link",
+   "label": "Default Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_cost_center",
+   "fieldtype": "Link",
+   "label": "Default Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insurance_regime",
+   "fieldtype": "Select",
+   "label": "Insurance Regime",
+   "options": "None\nX12 (US)\nNPHIES (Saudi Arabia)\nNHS (UK)\nCustom",
+   "default": "None"
+  },
+  {
+   "fieldname": "enable_zatca_einvoice",
+   "fieldtype": "Check",
+   "label": "Enable ZATCA Phase-2 e-Invoice",
+   "default": "0"
+  },
+  {
+   "fieldname": "sb_comm",
+   "fieldtype": "Section Break",
+   "label": "Patient Communication"
+  },
+  {
+   "fieldname": "enable_recall_automation",
+   "fieldtype": "Check",
+   "label": "Enable Recall Automation",
+   "default": "1"
+  },
+  {
+   "fieldname": "reminder_offsets_hours",
+   "fieldtype": "Data",
+   "label": "Reminder Offsets (hours, csv)",
+   "options": "default=72,24,2"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whatsapp_enabled",
+   "fieldtype": "Check",
+   "label": "WhatsApp Reminders",
+   "default": "0"
+  },
+  {
+   "fieldname": "sms_enabled",
+   "fieldtype": "Check",
+   "label": "SMS Reminders",
+   "default": "0"
+  },
+  {
+   "fieldname": "email_enabled",
+   "fieldtype": "Check",
+   "label": "Email Reminders",
+   "default": "1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Neo Dentiq Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "issingle": 1,
+ "quick_entry": 0
+}

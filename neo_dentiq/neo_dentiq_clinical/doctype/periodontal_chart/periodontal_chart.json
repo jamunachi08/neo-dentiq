@@ -1,0 +1,317 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "cb1",
+  "exam_date",
+  "practitioner",
+  "clinic",
+  "sb_chart",
+  "perio_chart_html",
+  "readings",
+  "sb_calc",
+  "bop_percent",
+  "plaque_index_percent",
+  "sites_5mm_plus",
+  "cb2",
+  "mean_pd",
+  "mean_cal",
+  "teeth_present",
+  "sb_diag",
+  "perio_stage",
+  "perio_grade",
+  "extent",
+  "cb3",
+  "bone_loss_percent",
+  "bone_loss_age_ratio",
+  "risk_modifiers",
+  "sb_plan",
+  "diagnosis",
+  "recommended_therapy",
+  "reevaluation_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PERIO-.YYYY.-.#####",
+   "default": "PERIO-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exam_date",
+   "fieldtype": "Date",
+   "label": "Exam Date",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "sb_chart",
+   "fieldtype": "Section Break",
+   "label": "6-Point Probing Chart"
+  },
+  {
+   "fieldname": "perio_chart_html",
+   "fieldtype": "HTML",
+   "label": "Perio Chart"
+  },
+  {
+   "fieldname": "readings",
+   "fieldtype": "Table",
+   "label": "Readings",
+   "options": "Periodontal Tooth Reading"
+  },
+  {
+   "fieldname": "sb_calc",
+   "fieldtype": "Section Break",
+   "label": "Computed Indices"
+  },
+  {
+   "fieldname": "bop_percent",
+   "fieldtype": "Percent",
+   "label": "Bleeding on Probing %",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "plaque_index_percent",
+   "fieldtype": "Percent",
+   "label": "Plaque Index %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sites_5mm_plus",
+   "fieldtype": "Int",
+   "label": "Sites >= 5mm",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mean_pd",
+   "fieldtype": "Float",
+   "label": "Mean Probing Depth",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mean_cal",
+   "fieldtype": "Float",
+   "label": "Mean CAL",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "teeth_present",
+   "fieldtype": "Int",
+   "label": "Teeth Present",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_diag",
+   "fieldtype": "Section Break",
+   "label": "AAP / EFP 2018 Classification"
+  },
+  {
+   "fieldname": "perio_stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Health\nGingivitis\nStage I\nStage II\nStage III\nStage IV",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Auto-computed from interdental CAL, bone loss and tooth loss."
+  },
+  {
+   "fieldname": "perio_grade",
+   "fieldtype": "Select",
+   "label": "Grade",
+   "options": "Grade A\nGrade B\nGrade C",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "extent",
+   "fieldtype": "Select",
+   "label": "Extent",
+   "options": "Localized\nGeneralized\nMolar-Incisor Pattern",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bone_loss_percent",
+   "fieldtype": "Percent",
+   "label": "Radiographic Bone Loss %"
+  },
+  {
+   "fieldname": "bone_loss_age_ratio",
+   "fieldtype": "Float",
+   "label": "Bone Loss / Age Ratio",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_modifiers",
+   "fieldtype": "Small Text",
+   "label": "Risk Modifiers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_plan",
+   "fieldtype": "Section Break",
+   "label": "Assessment & Plan"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Small Text",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "recommended_therapy",
+   "fieldtype": "Small Text",
+   "label": "Recommended Therapy"
+  },
+  {
+   "fieldname": "reevaluation_date",
+   "fieldtype": "Date",
+   "label": "Re-evaluation Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Periodontal Chart",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1,
+   "hidden": 0
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Periodontal Chart",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 0,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

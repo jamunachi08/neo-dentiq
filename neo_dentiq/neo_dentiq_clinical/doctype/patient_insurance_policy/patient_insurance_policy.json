@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "insurance_plan",
+  "payer",
+  "policy_number",
+  "subscriber_relationship",
+  "subscriber_name",
+  "coverage_order",
+  "valid_from",
+  "valid_to",
+  "benefit_used_ytd",
+  "eligibility_status",
+  "last_verified_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "insurance_plan",
+   "fieldtype": "Link",
+   "label": "Insurance Plan",
+   "options": "Insurance Plan",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "payer",
+   "fieldtype": "Data",
+   "label": "Payer",
+   "in_list_view": 1,
+   "columns": 2,
+   "fetch_from": "insurance_plan.payer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy / Member No",
+   "columns": 2,
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "subscriber_relationship",
+   "fieldtype": "Select",
+   "label": "Relationship",
+   "options": "Self\nSpouse\nChild\nOther",
+   "default": "Self",
+   "columns": 1
+  },
+  {
+   "fieldname": "subscriber_name",
+   "fieldtype": "Data",
+   "label": "Subscriber Name",
+   "columns": 2
+  },
+  {
+   "fieldname": "coverage_order",
+   "fieldtype": "Select",
+   "label": "Order",
+   "options": "Primary\nSecondary\nTertiary",
+   "default": "Primary",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From",
+   "columns": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To",
+   "columns": 1
+  },
+  {
+   "fieldname": "benefit_used_ytd",
+   "fieldtype": "Currency",
+   "label": "Benefit Used YTD",
+   "columns": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "eligibility_status",
+   "fieldtype": "Select",
+   "label": "Eligibility",
+   "options": "Unverified\nActive\nInactive\nTerminated",
+   "default": "Unverified",
+   "columns": 1
+  },
+  {
+   "fieldname": "last_verified_on",
+   "fieldtype": "Datetime",
+   "label": "Last Verified",
+   "columns": 2,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Patient Insurance Policy",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

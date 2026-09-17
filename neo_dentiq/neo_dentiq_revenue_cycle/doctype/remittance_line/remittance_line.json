@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "insurance_claim",
+  "patient",
+  "billed_amount",
+  "allowed_amount",
+  "paid_amount",
+  "adjustment",
+  "denial_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "insurance_claim",
+   "fieldtype": "Link",
+   "label": "Claim",
+   "options": "Insurance Claim",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "billed_amount",
+   "fieldtype": "Currency",
+   "label": "Billed",
+   "columns": 2
+  },
+  {
+   "fieldname": "allowed_amount",
+   "fieldtype": "Currency",
+   "label": "Allowed",
+   "columns": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid",
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "adjustment",
+   "fieldtype": "Currency",
+   "label": "Adjustment",
+   "columns": 1
+  },
+  {
+   "fieldname": "denial_code",
+   "fieldtype": "Data",
+   "label": "CARC/RARC",
+   "columns": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Revenue Cycle",
+ "name": "Remittance Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sterilizer_name",
+  "clinic",
+  "cb1",
+  "asset",
+  "serial_number",
+  "is_active",
+  "sb_s",
+  "sterilizer_type",
+  "chamber_capacity_litres",
+  "cb2",
+  "last_validation_date",
+  "next_validation_due",
+  "bi_test_frequency"
+ ],
+ "fields": [
+  {
+   "fieldname": "sterilizer_name",
+   "fieldtype": "Data",
+   "label": "Sterilizer",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "ERPNext Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "label": "Serial No"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_s",
+   "fieldtype": "Section Break",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "sterilizer_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Class B Vacuum Autoclave\nClass N Autoclave\nClass S Autoclave\nChemiclave\nDry Heat Oven",
+   "default": "Class B Vacuum Autoclave"
+  },
+  {
+   "fieldname": "chamber_capacity_litres",
+   "fieldtype": "Float",
+   "label": "Chamber Capacity (L)"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_validation_date",
+   "fieldtype": "Date",
+   "label": "Last Validation"
+  },
+  {
+   "fieldname": "next_validation_due",
+   "fieldtype": "Date",
+   "label": "Next Validation Due"
+  },
+  {
+   "fieldname": "bi_test_frequency",
+   "fieldtype": "Select",
+   "label": "Biological Indicator Frequency",
+   "options": "Every Cycle\nDaily\nWeekly\nMonthly",
+   "default": "Weekly"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Sterilizer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:sterilizer_name",
+ "quick_entry": 1
+}

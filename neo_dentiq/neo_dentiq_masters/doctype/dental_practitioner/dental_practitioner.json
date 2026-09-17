@@ -1,0 +1,289 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "practitioner_name",
+  "employee",
+  "user",
+  "cb1",
+  "status",
+  "practitioner_type",
+  "primary_clinic",
+  "sb_prof",
+  "speciality",
+  "qualification",
+  "experience_years",
+  "cb2",
+  "license_number",
+  "license_expiry",
+  "npi_number",
+  "sb_sched",
+  "schedule",
+  "default_operatory",
+  "default_appointment_duration",
+  "cb3",
+  "accepts_online_booking",
+  "max_daily_appointments",
+  "sb_fin",
+  "consultation_fee",
+  "commission_rate",
+  "cb4",
+  "lab_bill_to_practitioner",
+  "sb_priv",
+  "privileges",
+  "sb_bio",
+  "image",
+  "bio",
+  "languages"
+ ],
+ "fields": [
+  {
+   "fieldname": "practitioner_name",
+   "fieldtype": "Data",
+   "label": "Practitioner Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User",
+   "in_standard_filter": 1,
+   "description": "Links portal/desk login to this practitioner."
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOn Leave\nInactive",
+   "default": "Active",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "practitioner_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Dentist\nSpecialist\nHygienist\nDental Therapist\nAssistant\nDental Nurse",
+   "default": "Dentist",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_clinic",
+   "fieldtype": "Link",
+   "label": "Primary Clinic",
+   "options": "Dental Clinic",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sb_prof",
+   "fieldtype": "Section Break",
+   "label": "Professional"
+  },
+  {
+   "fieldname": "speciality",
+   "fieldtype": "Link",
+   "label": "Speciality",
+   "options": "Dental Speciality",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Data",
+   "label": "Qualification"
+  },
+  {
+   "fieldname": "experience_years",
+   "fieldtype": "Int",
+   "label": "Years of Experience"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License No"
+  },
+  {
+   "fieldname": "license_expiry",
+   "fieldtype": "Date",
+   "label": "License Expiry",
+   "description": "System warns 60 days before expiry and blocks scheduling after expiry."
+  },
+  {
+   "fieldname": "npi_number",
+   "fieldtype": "Data",
+   "label": "NPI / Provider ID",
+   "description": "NPI (US) / NPHIES practitioner ID (KSA) / GDC No (UK)"
+  },
+  {
+   "fieldname": "sb_sched",
+   "fieldtype": "Section Break",
+   "label": "Scheduling"
+  },
+  {
+   "fieldname": "schedule",
+   "fieldtype": "Link",
+   "label": "Default Schedule",
+   "options": "Dental Practitioner Schedule"
+  },
+  {
+   "fieldname": "default_operatory",
+   "fieldtype": "Link",
+   "label": "Default Operatory",
+   "options": "Dental Operatory"
+  },
+  {
+   "fieldname": "default_appointment_duration",
+   "fieldtype": "Int",
+   "label": "Default Appointment Duration (min)",
+   "default": "30"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accepts_online_booking",
+   "fieldtype": "Check",
+   "label": "Accepts Online Booking",
+   "default": "1"
+  },
+  {
+   "fieldname": "max_daily_appointments",
+   "fieldtype": "Int",
+   "label": "Max Daily Appointments",
+   "description": "0 = unlimited",
+   "default": "0"
+  },
+  {
+   "fieldname": "sb_fin",
+   "fieldtype": "Section Break",
+   "label": "Commercial"
+  },
+  {
+   "fieldname": "consultation_fee",
+   "fieldtype": "Currency",
+   "label": "Consultation Fee"
+  },
+  {
+   "fieldname": "commission_rate",
+   "fieldtype": "Percent",
+   "label": "Production Commission %"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lab_bill_to_practitioner",
+   "fieldtype": "Check",
+   "label": "Deduct Lab Cost from Commission"
+  },
+  {
+   "fieldname": "sb_priv",
+   "fieldtype": "Section Break",
+   "label": "Privileges"
+  },
+  {
+   "fieldname": "privileges",
+   "fieldtype": "Table",
+   "label": "Procedure Privileges",
+   "options": "Practitioner Privilege"
+  },
+  {
+   "fieldname": "sb_bio",
+   "fieldtype": "Section Break",
+   "label": "Profile",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Text Editor",
+   "label": "Biography"
+  },
+  {
+   "fieldname": "languages",
+   "fieldtype": "Data",
+   "label": "Languages Spoken"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Practitioner",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:practitioner_name",
+ "title_field": "practitioner_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "license_number,speciality",
+ "image_field": "image",
+ "quick_entry": 1
+}

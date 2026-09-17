@@ -1,0 +1,502 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "patient_mobile",
+  "is_new_patient",
+  "cb1",
+  "appointment_type",
+  "appointment_date",
+  "appointment_time",
+  "duration",
+  "end_time",
+  "sb_res",
+  "practitioner",
+  "operatory",
+  "clinic",
+  "cb2",
+  "assistant",
+  "instrument_kit",
+  "sb_status",
+  "status",
+  "confirmation_status",
+  "arrived_at",
+  "seated_at",
+  "cb3",
+  "completed_at",
+  "wait_minutes",
+  "cancellation_reason",
+  "rescheduled_to",
+  "sb_ai",
+  "no_show_risk",
+  "risk_band",
+  "risk_factors",
+  "cb4",
+  "is_overbooked",
+  "filled_from_waitlist",
+  "reminder_count",
+  "last_reminder_on",
+  "sb_proc",
+  "treatment_plan",
+  "procedures",
+  "sb_intake",
+  "intake_response",
+  "intake_status",
+  "cb5",
+  "medical_history_confirmed",
+  "insurance_verified",
+  "deposit_paid",
+  "sb_notes",
+  "reason",
+  "notes",
+  "cb6",
+  "referral_source",
+  "booked_via",
+  "sb_link",
+  "clinical_note",
+  "sales_invoice",
+  "cb7",
+  "production_value",
+  "color"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "APT-.YYYY.-.#####",
+   "default": "APT-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient_mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "fetch_from": "patient.mobile",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_new_patient",
+   "fieldtype": "Check",
+   "label": "New Patient"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appointment_type",
+   "fieldtype": "Link",
+   "label": "Appointment Type",
+   "options": "Appointment Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "appointment_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "appointment_time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration (min)",
+   "reqd": 1,
+   "default": "30"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_res",
+   "fieldtype": "Section Break",
+   "label": "Resources"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "operatory",
+   "fieldtype": "Link",
+   "label": "Operatory",
+   "options": "Dental Operatory",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assistant",
+   "fieldtype": "Link",
+   "label": "Assistant",
+   "options": "Dental Practitioner"
+  },
+  {
+   "fieldname": "instrument_kit",
+   "fieldtype": "Link",
+   "label": "Instrument Kit Required",
+   "options": "Instrument Kit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Requested\nScheduled\nConfirmed\nArrived\nIn Operatory\nIn Progress\nCompleted\nCancelled\nNo Show\nRescheduled",
+   "default": "Scheduled",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "confirmation_status",
+   "fieldtype": "Select",
+   "label": "Confirmation",
+   "options": "Not Sent\nSent\nConfirmed by Patient\nDeclined",
+   "default": "Not Sent"
+  },
+  {
+   "fieldname": "arrived_at",
+   "fieldtype": "Datetime",
+   "label": "Arrived At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "seated_at",
+   "fieldtype": "Datetime",
+   "label": "Seated At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Datetime",
+   "label": "Completed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "wait_minutes",
+   "fieldtype": "Int",
+   "label": "Wait Time (min)",
+   "description": "Arrival to seating. Feeds the patient-experience dashboard.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cancellation_reason",
+   "fieldtype": "Link",
+   "label": "Cancellation Reason",
+   "options": "Cancellation Reason",
+   "depends_on": "eval:['Cancelled','No Show'].includes(doc.status)"
+  },
+  {
+   "fieldname": "rescheduled_to",
+   "fieldtype": "Link",
+   "label": "Rescheduled To",
+   "options": "Dental Appointment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_ai",
+   "fieldtype": "Section Break",
+   "label": "Predictive Scheduling"
+  },
+  {
+   "fieldname": "no_show_risk",
+   "fieldtype": "Int",
+   "label": "No-Show Risk %",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_band",
+   "fieldtype": "Select",
+   "label": "Risk Band",
+   "options": "Low\nMedium\nHigh",
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_factors",
+   "fieldtype": "Small Text",
+   "label": "Risk Drivers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_overbooked",
+   "fieldtype": "Check",
+   "label": "Smart Overbook Slot",
+   "read_only": 1
+  },
+  {
+   "fieldname": "filled_from_waitlist",
+   "fieldtype": "Check",
+   "label": "Filled from Waitlist",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reminder_count",
+   "fieldtype": "Int",
+   "label": "Reminders Sent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_reminder_on",
+   "fieldtype": "Datetime",
+   "label": "Last Reminder",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_proc",
+   "fieldtype": "Section Break",
+   "label": "Planned Procedures"
+  },
+  {
+   "fieldname": "treatment_plan",
+   "fieldtype": "Link",
+   "label": "Treatment Plan",
+   "options": "Treatment Plan"
+  },
+  {
+   "fieldname": "procedures",
+   "fieldtype": "Table",
+   "label": "Procedures",
+   "options": "Appointment Procedure"
+  },
+  {
+   "fieldname": "sb_intake",
+   "fieldtype": "Section Break",
+   "label": "Pre-Visit"
+  },
+  {
+   "fieldname": "intake_response",
+   "fieldtype": "Link",
+   "label": "Intake Form",
+   "options": "Patient Intake Response",
+   "read_only": 1
+  },
+  {
+   "fieldname": "intake_status",
+   "fieldtype": "Select",
+   "label": "Intake Status",
+   "options": "Not Required\nSent\nCompleted",
+   "default": "Not Required",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "medical_history_confirmed",
+   "fieldtype": "Check",
+   "label": "Medical History Confirmed"
+  },
+  {
+   "fieldname": "insurance_verified",
+   "fieldtype": "Check",
+   "label": "Insurance Verified"
+  },
+  {
+   "fieldname": "deposit_paid",
+   "fieldtype": "Check",
+   "label": "Deposit Paid"
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Visit"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referral_source",
+   "fieldtype": "Link",
+   "label": "Referral Source",
+   "options": "Referral Source"
+  },
+  {
+   "fieldname": "booked_via",
+   "fieldtype": "Select",
+   "label": "Booked Via",
+   "options": "Front Desk\nPhone\nPatient Portal\nWhatsApp\nWalk-in\nRecall Campaign",
+   "default": "Front Desk",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sb_link",
+   "fieldtype": "Section Break",
+   "label": "Outcome Links",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "clinical_note",
+   "fieldtype": "Link",
+   "label": "Clinical Note",
+   "options": "Clinical Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "production_value",
+   "fieldtype": "Currency",
+   "label": "Production Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Calendar Colour",
+   "hidden": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Practice",
+ "name": "Dental Appointment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 0,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "patient_name,appointment_date,practitioner",
+ "quick_entry": 1
+}

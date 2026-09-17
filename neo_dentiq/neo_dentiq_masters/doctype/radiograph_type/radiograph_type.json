@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "radiograph_type",
+  "modality",
+  "cb1",
+  "item",
+  "effective_dose_msv",
+  "default_duration",
+  "justification_required"
+ ],
+ "fields": [
+  {
+   "fieldname": "radiograph_type",
+   "fieldtype": "Data",
+   "label": "Radiograph Type",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "modality",
+   "fieldtype": "Select",
+   "label": "Modality",
+   "options": "Intraoral Periapical\nBitewing\nOcclusal\nPanoramic (OPG)\nCephalometric\nCBCT\nIntraoral Scan\nPhotograph",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Billing Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "effective_dose_msv",
+   "fieldtype": "Float",
+   "label": "Effective Dose (mSv)",
+   "description": "Used for cumulative patient radiation-dose tracking (ALARA).",
+   "precision": "4"
+  },
+  {
+   "fieldname": "default_duration",
+   "fieldtype": "Int",
+   "label": "Duration (min)",
+   "default": "10"
+  },
+  {
+   "fieldname": "justification_required",
+   "fieldtype": "Check",
+   "label": "Justification Required",
+   "default": "1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Radiograph Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:radiograph_type",
+ "quick_entry": 1
+}

@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category_name",
+  "parent_dental_procedure_category",
+  "is_group",
+  "cb1",
+  "item_group",
+  "default_phase",
+  "colour"
+ ],
+ "fields": [
+  {
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "label": "Category",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "parent_dental_procedure_category",
+   "fieldtype": "Link",
+   "label": "Parent Category",
+   "options": "Dental Procedure Category"
+  },
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Maps to Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "default_phase",
+   "fieldtype": "Select",
+   "label": "Default Treatment Phase",
+   "options": "Phase 0 - Emergency / Pain Relief\nPhase 1 - Disease Control\nPhase 2 - Definitive / Restorative\nPhase 3 - Rehabilitation\nPhase 4 - Maintenance",
+   "default": "Phase 2 - Definitive / Restorative"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Color",
+   "label": "Chart Colour"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Procedure Category",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:category_name",
+ "is_tree": 1,
+ "quick_entry": 1,
+ "nsm_parent_field": "parent_dental_procedure_category"
+}

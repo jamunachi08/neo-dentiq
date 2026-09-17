@@ -1,0 +1,59 @@
+<div class="ndq-tp">
+	<style>
+		.ndq-tp { font-family: var(--font-stack, sans-serif); font-size: 12px; }
+		.ndq-tp table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+		.ndq-tp th, .ndq-tp td {
+			border-bottom: 1px solid #e4e4e7; padding: 6px 4px; text-align: left;
+		}
+		.ndq-tp td.num, .ndq-tp th.num { text-align: right; }
+		.ndq-tp .phase { background: #fafafa; font-weight: 600; }
+		.ndq-tp .totals { margin-top: 14px; width: 320px; margin-left: auto; }
+	</style>
+
+	<h3>{{ doc.title }}</h3>
+	<p>{{ doc.patient_name }} · {{ frappe.format(doc.plan_date, {"fieldtype": "Date"}) }}
+		· {{ doc.practitioner }}</p>
+
+	<table>
+		<thead><tr>
+			<th>Procedure</th><th>Tooth</th><th class="num">Fee</th>
+			<th class="num">Insurance covers</th><th class="num">You pay</th><th>Status</th>
+		</tr></thead>
+		<tbody>
+		{% set ns = namespace(phase="") %}
+		{% for row in doc.items %}
+			{% if row.phase != ns.phase %}
+				{% set ns.phase = row.phase %}
+				<tr class="phase"><td colspan="6">{{ row.phase }}</td></tr>
+			{% endif %}
+			<tr>
+				<td>{{ row.procedure }}{% if row.surfaces %} ({{ row.surfaces }}){% endif %}</td>
+				<td>{{ row.tooth or "" }}</td>
+				<td class="num">{{ frappe.format(row.fee, {"fieldtype": "Currency"}) }}</td>
+				<td class="num">{{ frappe.format(row.insurance_estimate,
+					{"fieldtype": "Currency"}) }}</td>
+				<td class="num">{{ frappe.format(row.patient_portion,
+					{"fieldtype": "Currency"}) }}</td>
+				<td>{{ row.status }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+	<table class="totals">
+		<tr><td>Total fee</td><td class="num">{{ frappe.format(doc.total_fee,
+			{"fieldtype": "Currency"}) }}</td></tr>
+		<tr><td>Estimated insurance benefit</td><td class="num">{{ frappe.format(
+			doc.total_insurance_estimate, {"fieldtype": "Currency"}) }}</td></tr>
+		<tr><td><strong>Your estimated share</strong></td><td class="num"><strong>
+			{{ frappe.format(doc.total_patient_portion, {"fieldtype": "Currency"}) }}
+		</strong></td></tr>
+	</table>
+
+	<p style="margin-top:16px;color:#52525b">
+		Insurance figures are an estimate based on your plan's published benefits. The
+		final amount depends on your remaining annual maximum and the payer's
+		adjudication. Fees are valid until
+		{{ frappe.format(doc.valid_till, {"fieldtype": "Date"}) or "the date shown above" }}.
+	</p>
+</div>

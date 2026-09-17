@@ -1,0 +1,352 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "case_type",
+  "cb1",
+  "lab",
+  "practitioner",
+  "clinic",
+  "sb_status",
+  "status",
+  "sent_date",
+  "due_date",
+  "cb2",
+  "received_date",
+  "delivery_date",
+  "is_late",
+  "days_late",
+  "sb_spec",
+  "teeth",
+  "shade",
+  "shade_guide",
+  "material",
+  "cb3",
+  "pontic_design",
+  "occlusal_scheme",
+  "digital_scan_file",
+  "instructions",
+  "sb_stage",
+  "stages",
+  "sb_qc",
+  "remake_count",
+  "remake_reason",
+  "cb4",
+  "fit_quality",
+  "rejected_by_clinic",
+  "sb_cost",
+  "lab_cost",
+  "purchase_invoice",
+  "cb5",
+  "billable_to_patient",
+  "patient_charge"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LAB-.YYYY.-.#####",
+   "default": "LAB-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "case_type",
+   "fieldtype": "Link",
+   "label": "Case Type",
+   "options": "Lab Case Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lab",
+   "fieldtype": "Link",
+   "label": "Lab",
+   "options": "Dental Lab",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nImpression Taken\nSent to Lab\nIn Fabrication\nReceived\nTry-in\nRemake\nDelivered\nCancelled",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sent_date",
+   "fieldtype": "Date",
+   "label": "Sent Date"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_date",
+   "fieldtype": "Date",
+   "label": "Received Date"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivered to Patient"
+  },
+  {
+   "fieldname": "is_late",
+   "fieldtype": "Check",
+   "label": "Late",
+   "read_only": 1
+  },
+  {
+   "fieldname": "days_late",
+   "fieldtype": "Int",
+   "label": "Days Late",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_spec",
+   "fieldtype": "Section Break",
+   "label": "Prescription to Lab"
+  },
+  {
+   "fieldname": "teeth",
+   "fieldtype": "Small Text",
+   "label": "Teeth / Units",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shade",
+   "fieldtype": "Data",
+   "label": "Shade"
+  },
+  {
+   "fieldname": "shade_guide",
+   "fieldtype": "Select",
+   "label": "Shade Guide",
+   "options": "VITA Classical\nVITA 3D-Master\nChromascop\nOther",
+   "default": "VITA Classical"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "label": "Material",
+   "options": "Item"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pontic_design",
+   "fieldtype": "Data",
+   "label": "Pontic Design"
+  },
+  {
+   "fieldname": "occlusal_scheme",
+   "fieldtype": "Data",
+   "label": "Occlusal Scheme"
+  },
+  {
+   "fieldname": "digital_scan_file",
+   "fieldtype": "Attach",
+   "label": "Digital Scan (STL/PLY)"
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Text Editor",
+   "label": "Instructions to Lab"
+  },
+  {
+   "fieldname": "sb_stage",
+   "fieldtype": "Section Break",
+   "label": "Stages"
+  },
+  {
+   "fieldname": "stages",
+   "fieldtype": "Table",
+   "label": "Stages",
+   "options": "Lab Case Stage"
+  },
+  {
+   "fieldname": "sb_qc",
+   "fieldtype": "Section Break",
+   "label": "Quality"
+  },
+  {
+   "fieldname": "remake_count",
+   "fieldtype": "Int",
+   "label": "Remake Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remake_reason",
+   "fieldtype": "Small Text",
+   "label": "Remake Reason"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fit_quality",
+   "fieldtype": "Select",
+   "label": "Fit Quality",
+   "options": "Excellent\nAcceptable\nPoor"
+  },
+  {
+   "fieldname": "rejected_by_clinic",
+   "fieldtype": "Check",
+   "label": "Rejected by Clinic"
+  },
+  {
+   "fieldname": "sb_cost",
+   "fieldtype": "Section Break",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "lab_cost",
+   "fieldtype": "Currency",
+   "label": "Lab Cost"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billable_to_patient",
+   "fieldtype": "Check",
+   "label": "Bill to Patient",
+   "default": "1"
+  },
+  {
+   "fieldname": "patient_charge",
+   "fieldtype": "Currency",
+   "label": "Patient Charge"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Lab Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

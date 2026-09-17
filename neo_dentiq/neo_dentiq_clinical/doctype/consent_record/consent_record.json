@@ -1,0 +1,262 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "consent_template",
+  "cb1",
+  "consent_date",
+  "practitioner",
+  "procedure",
+  "valid_till",
+  "sb_body",
+  "consent_body",
+  "sb_sig",
+  "patient_signature",
+  "signatory_name",
+  "signatory_relationship",
+  "cb2",
+  "practitioner_signature",
+  "witness_name",
+  "witness_signature",
+  "sb_meta",
+  "status",
+  "signed_ip",
+  "cb3",
+  "signed_via",
+  "withdrawn_on",
+  "attachment"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CON-.YYYY.-.#####",
+   "default": "CON-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consent_template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "Consent Form Template",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consent_date",
+   "fieldtype": "Datetime",
+   "label": "Consent Date",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Now"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Dental Procedure"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_body",
+   "fieldtype": "Section Break",
+   "label": "Consent Text"
+  },
+  {
+   "fieldname": "consent_body",
+   "fieldtype": "Text Editor",
+   "label": "Consent Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_sig",
+   "fieldtype": "Section Break",
+   "label": "Signatures"
+  },
+  {
+   "fieldname": "patient_signature",
+   "fieldtype": "Signature",
+   "label": "Patient Signature"
+  },
+  {
+   "fieldname": "signatory_name",
+   "fieldtype": "Data",
+   "label": "Signatory Name"
+  },
+  {
+   "fieldname": "signatory_relationship",
+   "fieldtype": "Select",
+   "label": "Relationship",
+   "options": "Self\nParent\nLegal Guardian",
+   "default": "Self"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "practitioner_signature",
+   "fieldtype": "Signature",
+   "label": "Practitioner Signature"
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name"
+  },
+  {
+   "fieldname": "witness_signature",
+   "fieldtype": "Signature",
+   "label": "Witness Signature"
+  },
+  {
+   "fieldname": "sb_meta",
+   "fieldtype": "Section Break",
+   "label": "Audit"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSigned\nExpired\nWithdrawn",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "signed_ip",
+   "fieldtype": "Data",
+   "label": "Signed from IP",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signed_via",
+   "fieldtype": "Select",
+   "label": "Signed Via",
+   "options": "In Clinic (Desk)\nPatient Portal\nTablet Kiosk\nEmail Link",
+   "default": "In Clinic (Desk)"
+  },
+  {
+   "fieldname": "withdrawn_on",
+   "fieldtype": "Datetime",
+   "label": "Withdrawn On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Scanned Copy"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Consent Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "procedure_code",
+  "procedure",
+  "tooth",
+  "surfaces",
+  "service_date",
+  "diagnosis_code",
+  "billed_amount",
+  "allowed_amount",
+  "paid_amount",
+  "patient_responsibility",
+  "adjustment",
+  "line_status",
+  "denial_code",
+  "clinical_procedure"
+ ],
+ "fields": [
+  {
+   "fieldname": "procedure_code",
+   "fieldtype": "Data",
+   "label": "Code",
+   "columns": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Dental Procedure",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "tooth",
+   "fieldtype": "Link",
+   "label": "Tooth",
+   "options": "Tooth Master",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "surfaces",
+   "fieldtype": "Data",
+   "label": "Surf",
+   "columns": 1
+  },
+  {
+   "fieldname": "service_date",
+   "fieldtype": "Date",
+   "label": "Date of Service",
+   "columns": 2,
+   "reqd": 1
+  },
+  {
+   "fieldname": "diagnosis_code",
+   "fieldtype": "Link",
+   "label": "Dx",
+   "options": "Dental Diagnosis Code",
+   "columns": 1
+  },
+  {
+   "fieldname": "billed_amount",
+   "fieldtype": "Currency",
+   "label": "Billed",
+   "columns": 1,
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "allowed_amount",
+   "fieldtype": "Currency",
+   "label": "Allowed",
+   "columns": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid",
+   "columns": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_responsibility",
+   "fieldtype": "Currency",
+   "label": "Patient Resp.",
+   "columns": 1
+  },
+  {
+   "fieldname": "adjustment",
+   "fieldtype": "Currency",
+   "label": "Write-off",
+   "columns": 1
+  },
+  {
+   "fieldname": "line_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Submitted\nPaid\nPartially Paid\nDenied\nAppealed",
+   "default": "Submitted",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "denial_code",
+   "fieldtype": "Data",
+   "label": "Denial Code",
+   "columns": 1
+  },
+  {
+   "fieldname": "clinical_procedure",
+   "fieldtype": "Link",
+   "label": "Procedure Ref",
+   "options": "Clinical Procedure",
+   "hidden": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Revenue Cycle",
+ "name": "Insurance Claim Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

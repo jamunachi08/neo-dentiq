@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "payer",
+  "cb1",
+  "plan_code",
+  "is_active",
+  "network_tier",
+  "sb_ben",
+  "annual_maximum",
+  "deductible",
+  "deductible_applies_to_preventive",
+  "cb2",
+  "lifetime_ortho_maximum",
+  "benefit_year_start",
+  "missing_tooth_clause",
+  "sb_fee",
+  "price_list",
+  "sb_cov",
+  "coverage_rules"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "payer",
+   "fieldtype": "Link",
+   "label": "Payer",
+   "options": "Insurance Payer",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_code",
+   "fieldtype": "Data",
+   "label": "Plan Code"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1"
+  },
+  {
+   "fieldname": "network_tier",
+   "fieldtype": "Select",
+   "label": "Network",
+   "options": "In-Network\nOut-of-Network",
+   "default": "In-Network",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_ben",
+   "fieldtype": "Section Break",
+   "label": "Benefits"
+  },
+  {
+   "fieldname": "annual_maximum",
+   "fieldtype": "Currency",
+   "label": "Annual Maximum"
+  },
+  {
+   "fieldname": "deductible",
+   "fieldtype": "Currency",
+   "label": "Annual Deductible"
+  },
+  {
+   "fieldname": "deductible_applies_to_preventive",
+   "fieldtype": "Check",
+   "label": "Deductible Applies to Preventive"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lifetime_ortho_maximum",
+   "fieldtype": "Currency",
+   "label": "Lifetime Ortho Maximum"
+  },
+  {
+   "fieldname": "benefit_year_start",
+   "fieldtype": "Select",
+   "label": "Benefit Year Starts",
+   "options": "January\nPolicy Anniversary",
+   "default": "January"
+  },
+  {
+   "fieldname": "missing_tooth_clause",
+   "fieldtype": "Check",
+   "label": "Missing Tooth Clause"
+  },
+  {
+   "fieldname": "sb_fee",
+   "fieldtype": "Section Break",
+   "label": "Fee Schedule"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Contracted Fee Schedule",
+   "options": "Price List",
+   "description": "ERPNext Price List holding negotiated (allowed) amounts for this plan."
+  },
+  {
+   "fieldname": "sb_cov",
+   "fieldtype": "Section Break",
+   "label": "Coverage Rules"
+  },
+  {
+   "fieldname": "coverage_rules",
+   "fieldtype": "Table",
+   "label": "Coverage Rules",
+   "options": "Insurance Coverage Rule"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Insurance Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "format:{payer}-{plan_name}",
+ "title_field": "plan_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

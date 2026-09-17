@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "phase",
+  "sequence",
+  "procedure",
+  "procedure_code",
+  "tooth",
+  "surfaces",
+  "qty",
+  "fee",
+  "insurance_estimate",
+  "patient_portion",
+  "coverage_percent",
+  "preauth_required",
+  "status",
+  "alternative_group",
+  "is_recommended",
+  "scheduled_appointment",
+  "completed_procedure",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "phase",
+   "fieldtype": "Select",
+   "label": "Phase",
+   "options": "Phase 0 - Emergency / Pain Relief\nPhase 1 - Disease Control\nPhase 2 - Definitive / Restorative\nPhase 3 - Rehabilitation\nPhase 4 - Maintenance",
+   "default": "Phase 2 - Definitive / Restorative",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Seq",
+   "columns": 1
+  },
+  {
+   "fieldname": "procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Dental Procedure",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "procedure_code",
+   "fieldtype": "Data",
+   "label": "Code",
+   "columns": 1,
+   "fetch_from": "procedure.procedure_code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tooth",
+   "fieldtype": "Link",
+   "label": "Tooth",
+   "options": "Tooth Master",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "surfaces",
+   "fieldtype": "Data",
+   "label": "Surfaces",
+   "columns": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "columns": 1,
+   "default": "1"
+  },
+  {
+   "fieldname": "fee",
+   "fieldtype": "Currency",
+   "label": "Fee",
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "insurance_estimate",
+   "fieldtype": "Currency",
+   "label": "Est. Insurance",
+   "in_list_view": 1,
+   "columns": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient_portion",
+   "fieldtype": "Currency",
+   "label": "Patient Portion",
+   "in_list_view": 1,
+   "columns": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "coverage_percent",
+   "fieldtype": "Percent",
+   "label": "Coverage %",
+   "columns": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "preauth_required",
+   "fieldtype": "Check",
+   "label": "Pre-auth",
+   "columns": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Proposed\nAccepted\nDeclined\nDeferred\nScheduled\nIn Progress\nCompleted\nVoid",
+   "default": "Proposed",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "alternative_group",
+   "fieldtype": "Data",
+   "label": "Alternative Group",
+   "description": "Items sharing a group are mutually exclusive options (e.g. Implant vs Bridge).",
+   "columns": 1
+  },
+  {
+   "fieldname": "is_recommended",
+   "fieldtype": "Check",
+   "label": "Recommended",
+   "columns": 1
+  },
+  {
+   "fieldname": "scheduled_appointment",
+   "fieldtype": "Link",
+   "label": "Appointment",
+   "options": "Dental Appointment",
+   "read_only": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "completed_procedure",
+   "fieldtype": "Link",
+   "label": "Completed Procedure",
+   "options": "Clinical Procedure",
+   "read_only": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "columns": 2
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Treatment Plan Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

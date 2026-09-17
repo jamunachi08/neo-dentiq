@@ -1,0 +1,373 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "title",
+  "cb1",
+  "plan_date",
+  "practitioner",
+  "clinic",
+  "valid_till",
+  "sb_status",
+  "status",
+  "presented_on",
+  "cb2",
+  "acceptance_percent",
+  "decision_on",
+  "sb_items",
+  "items",
+  "sb_tot",
+  "total_fee",
+  "accepted_fee",
+  "discount_percent",
+  "cb3",
+  "total_insurance_estimate",
+  "total_patient_portion",
+  "remaining_annual_benefit",
+  "sb_fin",
+  "offer_payment_plan",
+  "payment_plan",
+  "cb4",
+  "down_payment",
+  "installments",
+  "sb_consent",
+  "presented_by",
+  "patient_signature",
+  "cb5",
+  "signed_on",
+  "declined_reason",
+  "sb_note",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TP-.YYYY.-.#####",
+   "default": "TP-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Plan Title",
+   "default": "Comprehensive Treatment Plan"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_date",
+   "fieldtype": "Date",
+   "label": "Plan Date",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPresented\nPartially Accepted\nAccepted\nDeclined\nIn Progress\nCompleted\nExpired",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "presented_on",
+   "fieldtype": "Datetime",
+   "label": "Presented On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acceptance_percent",
+   "fieldtype": "Percent",
+   "label": "Case Acceptance %",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "decision_on",
+   "fieldtype": "Datetime",
+   "label": "Decision On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_items",
+   "fieldtype": "Section Break",
+   "label": "Planned Procedures"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Procedures",
+   "options": "Treatment Plan Item"
+  },
+  {
+   "fieldname": "sb_tot",
+   "fieldtype": "Section Break",
+   "label": "Financial Summary"
+  },
+  {
+   "fieldname": "total_fee",
+   "fieldtype": "Currency",
+   "label": "Total Fee",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "accepted_fee",
+   "fieldtype": "Currency",
+   "label": "Accepted Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount %"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_insurance_estimate",
+   "fieldtype": "Currency",
+   "label": "Est. Insurance Benefit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_patient_portion",
+   "fieldtype": "Currency",
+   "label": "Est. Patient Portion",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_annual_benefit",
+   "fieldtype": "Currency",
+   "label": "Remaining Annual Benefit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_fin",
+   "fieldtype": "Section Break",
+   "label": "Financing"
+  },
+  {
+   "fieldname": "offer_payment_plan",
+   "fieldtype": "Check",
+   "label": "Offer Payment Plan"
+  },
+  {
+   "fieldname": "payment_plan",
+   "fieldtype": "Link",
+   "label": "Payment Plan",
+   "options": "Patient Payment Plan",
+   "read_only": 1,
+   "depends_on": "eval:doc.offer_payment_plan"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "down_payment",
+   "fieldtype": "Currency",
+   "label": "Down Payment",
+   "depends_on": "eval:doc.offer_payment_plan"
+  },
+  {
+   "fieldname": "installments",
+   "fieldtype": "Int",
+   "label": "Installments",
+   "depends_on": "eval:doc.offer_payment_plan"
+  },
+  {
+   "fieldname": "sb_consent",
+   "fieldtype": "Section Break",
+   "label": "Presentation & Consent"
+  },
+  {
+   "fieldname": "presented_by",
+   "fieldtype": "Link",
+   "label": "Presented By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient_signature",
+   "fieldtype": "Signature",
+   "label": "Patient Signature"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signed_on",
+   "fieldtype": "Datetime",
+   "label": "Signed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "declined_reason",
+   "fieldtype": "Small Text",
+   "label": "Reason if Declined"
+  },
+  {
+   "fieldname": "sb_note",
+   "fieldtype": "Section Break",
+   "label": "Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Treatment Plan",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1,
+   "hidden": 0
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Treatment Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 1,
+   "cancel": 0,
+   "amend": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "is_submittable": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

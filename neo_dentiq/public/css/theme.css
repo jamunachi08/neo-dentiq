@@ -1,0 +1,294 @@
+/* Neo Dentiq theme layer.
+   Every rule is scoped to .ndq-themed, and each visual feature is gated behind
+   its own body class, so turning a switch off in Neo Dentiq Theme genuinely
+   removes the styling rather than merely hiding it. */
+
+.ndq-themed {
+	--ndq-primary: #0D9488;
+	--ndq-secondary: #2563EB;
+	--ndq-accent: #F472B6;
+	--ndq-success: #16A34A;
+	--ndq-warning: #F59E0B;
+	--ndq-danger: #DC2626;
+	--ndq-info: #0EA5E9;
+	--ndq-bg: #F6FBFA;
+	--ndq-surface: #FFFFFF;
+	--ndq-text: #0F172A;
+	--ndq-muted: #64748B;
+	--ndq-border: #D7E9E6;
+	--ndq-radius: 10px;
+	--ndq-density: 1;
+	--ndq-tint: 0.12;
+	--ndq-font: 'Inter', system-ui, sans-serif;
+	--ndq-gradient: linear-gradient(120deg, #0D9488 0%, #2563EB 55%, #F472B6 100%);
+}
+
+/* ---------------------------------------------------------------- base */
+.ndq-themed {
+	font-family: var(--ndq-font);
+	background: var(--ndq-bg);
+	color: var(--ndq-text);
+}
+.ndq-themed .page-head,
+.ndq-themed .navbar { background: var(--ndq-surface); }
+.ndq-themed .widget,
+.ndq-themed .form-section,
+.ndq-themed .frappe-card,
+.ndq-themed .list-row-container {
+	border-radius: var(--ndq-radius);
+	border-color: var(--ndq-border);
+	background: var(--ndq-surface);
+}
+.ndq-themed .btn-primary {
+	background: var(--ndq-primary);
+	border-color: var(--ndq-primary);
+	border-radius: var(--ndq-radius);
+}
+.ndq-themed .btn-primary:hover { filter: brightness(1.08); }
+.ndq-themed .btn-secondary,
+.ndq-themed .btn-default {
+	border-radius: var(--ndq-radius);
+	border-color: var(--ndq-border);
+}
+.ndq-themed a { color: var(--ndq-secondary); }
+.ndq-themed .text-muted { color: var(--ndq-muted) !important; }
+
+.ndq-themed[data-density] { --ndq-scale: var(--ndq-density); }
+.ndq-themed .form-section { padding-block: calc(12px * var(--ndq-density)); }
+
+/* ---------------------------------------------------------------- sidebar */
+.ndq-colourful-sidebar .sidebar-item-container .desk-sidebar-item.selected,
+.ndq-colourful-sidebar .standard-sidebar-item.selected {
+	background: var(--ndq-primary-soft);
+	border-left: 3px solid var(--ndq-primary);
+	border-radius: var(--ndq-radius);
+}
+.ndq-colourful-sidebar .sidebar-item-icon svg,
+.ndq-colourful-sidebar .sidebar-item-icon use { color: var(--ndq-primary); }
+.ndq-colourful-sidebar .workspace-sidebar .item-anchor:hover {
+	background: var(--ndq-secondary-soft);
+	border-radius: var(--ndq-radius);
+}
+
+/* ---------------------------------------------------------------- headers */
+.ndq-gradient-headers .page-head .page-title .title-text,
+.ndq-gradient-headers .ndq-hero-title {
+	background: var(--ndq-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+.ndq-gradient-headers .page-head::after {
+	content: "";
+	display: block;
+	height: 3px;
+	background: var(--ndq-gradient);
+	border-radius: 999px;
+	margin-top: 6px;
+}
+.ndq-gradient-headers .ndq-banner {
+	background: linear-gradient(135deg, var(--ndq-primary-soft), var(--ndq-accent-soft));
+	border-color: transparent;
+}
+
+/* ---------------------------------------------------------------- pills */
+.ndq-coloured-pills .indicator-pill,
+.ndq-coloured-pills .ndq-pill {
+	border-radius: 999px;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+.ndq-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 2px 10px;
+	font-size: 11px;
+	border-radius: 999px;
+	background: var(--ndq-primary-soft);
+	color: var(--ndq-primary);
+}
+.ndq-pill[data-tone="success"] { background: var(--ndq-success-soft); color: var(--ndq-success); }
+.ndq-pill[data-tone="warning"] { background: var(--ndq-warning-soft); color: var(--ndq-warning); }
+.ndq-pill[data-tone="danger"] { background: var(--ndq-danger-soft); color: var(--ndq-danger); }
+
+/* ---------------------------------------------------------------- cards */
+.ndq-coloured-cards .widget.shortcut-widget-box {
+	border-top: 3px solid var(--ndq-primary);
+	background: linear-gradient(180deg, var(--ndq-primary-soft) 0%, var(--ndq-surface) 60%);
+}
+.ndq-coloured-cards .widget.links-widget-box { border-top: 3px solid var(--ndq-secondary); }
+.ndq-coloured-cards .widget.chart-widget-box { border-top: 3px solid var(--ndq-accent); }
+.ndq-coloured-cards .widget.number-widget-box { border-top: 3px solid var(--ndq-info); }
+
+/* ---------------------------------------------------------------- odontogram */
+.ndq-odontogram-toolbar {
+	display: flex; justify-content: space-between; align-items: center;
+	gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap;
+	padding: 0.6rem 0.9rem; border-radius: var(--ndq-radius);
+}
+.ndq-colour-odontogram .ndq-odontogram-toolbar {
+	background: linear-gradient(120deg, var(--ndq-primary-soft), var(--ndq-secondary-soft));
+}
+.ndq-indices { display: flex; gap: 1.25rem; font-size: 12px; }
+.ndq-indices b { color: var(--ndq-primary); font-size: 14px; }
+.ndq-numbering select { width: 128px; border-radius: var(--ndq-radius); }
+
+.ndq-odontogram-scroll { overflow-x: auto; padding: 0.5rem 0 0.75rem; }
+.ndq-odontogram { min-width: 700px; width: 100%; height: auto; }
+.ndq-tooth { cursor: pointer; }
+.ndq-animate .ndq-tooth polygon,
+.ndq-animate .ndq-tooth rect { transition: fill 140ms ease, stroke 140ms ease; }
+.ndq-tooth:hover polygon,
+.ndq-tooth:hover rect { stroke: var(--ndq-primary); stroke-width: 1.6; }
+.ndq-tooth:focus-visible { outline: 2px solid var(--ndq-primary); outline-offset: 2px; }
+.ndq-tooth-label { font-size: 10px; fill: var(--ndq-muted); font-family: var(--ndq-font); }
+.ndq-tooth-badge { font-size: 11px; font-weight: 700; }
+.ndq-tooth-code { font-size: 8px; font-weight: 700; }
+.ndq-cb-safe .ndq-tooth-code { display: block; }
+.ndq-tooth-code { display: none; }
+
+.ndq-quadrant-label {
+	font-size: 9px; fill: var(--ndq-muted); letter-spacing: 0.08em;
+}
+.ndq-midline { stroke: var(--ndq-border); stroke-width: 1; stroke-dasharray: 2 3; }
+
+.ndq-legend {
+	display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; font-size: 11px;
+}
+.ndq-legend-item {
+	display: inline-flex; align-items: center; gap: 0.35rem;
+	padding: 2px 8px; border-radius: 999px; background: var(--ndq-surface);
+	border: 1px solid var(--ndq-border); color: var(--ndq-muted);
+}
+.ndq-legend-item i {
+	width: 10px; height: 10px; border-radius: 3px; display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.ndq-legend-item i.ndq-planned { background: transparent; border: 1.5px dashed var(--ndq-success); }
+.ndq-tooth-detail { margin-top: 0.5rem; font-size: 12px; color: var(--ndq-muted); }
+
+/* ---------------------------------------------------------------- perio */
+.ndq-perio-arch { margin-bottom: 1.25rem; }
+.ndq-perio-arch h6 {
+	display: inline-block; padding: 2px 10px; border-radius: 999px;
+	background: var(--ndq-secondary-soft); color: var(--ndq-secondary);
+	font-size: 11px; font-weight: 700;
+}
+.ndq-perio-scroll { overflow-x: auto; }
+.ndq-perio-table { border-collapse: separate; border-spacing: 0; font-size: 11px; }
+.ndq-perio-table th,
+.ndq-perio-table td { border: 1px solid var(--ndq-border); padding: 0; text-align: center; }
+.ndq-perio-table th { padding: 3px 6px; font-weight: 600; background: var(--ndq-primary-soft); }
+.ndq-perio-table th.sticky {
+	position: sticky; left: 0; z-index: 1; min-width: 96px; text-align: left;
+	background: var(--ndq-surface);
+}
+.ndq-perio-input {
+	width: 34px; border: 0; background: transparent; text-align: center;
+	padding: 4px 0; color: inherit; font-variant-numeric: tabular-nums; font-weight: 600;
+}
+.ndq-perio-input:focus { outline: 2px solid var(--ndq-primary); outline-offset: -2px; }
+.ndq-perio-select { border: 0; background: transparent; width: 100%; }
+.ndq-colour-perio .ndq-perio-site.moderate { background: var(--ndq-perio-moderate, #FEF3C7); }
+.ndq-colour-perio .ndq-perio-site.deep { background: var(--ndq-perio-deep, #FEE2E2); }
+.ndq-colour-perio .ndq-perio-site.healthy { background: var(--ndq-perio-healthy, #ECFDF5); }
+.ndq-perio-site.bleeding { box-shadow: inset 0 -3px 0 var(--ndq-perio-bleeding, #DC2626); }
+.ndq-cb-safe .ndq-perio-site.deep::after { content: "▲"; font-size: 7px; }
+.ndq-cb-safe .ndq-perio-site.moderate::after { content: "■"; font-size: 7px; }
+.ndq-perio-summary {
+	display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap; font-size: 12px;
+}
+.ndq-perio-summary span {
+	padding: 3px 10px; border-radius: 999px; background: var(--ndq-surface);
+	border: 1px solid var(--ndq-border);
+}
+.ndq-perio-summary b { color: var(--ndq-primary); }
+
+/* ---------------------------------------------------------------- banner */
+.ndq-banner {
+	border: 1px solid var(--ndq-border);
+	border-radius: var(--ndq-radius);
+	padding: 0.8rem 1rem;
+	background: var(--ndq-surface);
+}
+.ndq-colour-banner .ndq-banner {
+	background: linear-gradient(135deg, var(--ndq-primary-soft), var(--ndq-accent-soft));
+	border-color: transparent;
+}
+.ndq-banner-head { display: flex; gap: 0.75rem; align-items: baseline; }
+.ndq-banner-head strong { font-size: 15px; color: var(--ndq-text); }
+.ndq-alerts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.ndq-alert {
+	font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 600;
+	background: var(--ndq-warning-soft); color: var(--ndq-warning);
+}
+.ndq-alert.critical {
+	background: var(--ndq-danger); color: #fff;
+	box-shadow: 0 1px 6px var(--ndq-danger-soft);
+}
+.ndq-animate .ndq-alert.critical { animation: ndq-pulse 2.4s ease-in-out infinite; }
+@keyframes ndq-pulse {
+	0%, 100% { box-shadow: 0 1px 6px var(--ndq-danger-soft); }
+	50% { box-shadow: 0 1px 14px var(--ndq-danger); }
+}
+.ndq-prophylaxis {
+	margin-top: 0.55rem; font-size: 11px; color: var(--ndq-danger);
+	border-left: 3px solid var(--ndq-danger); padding-left: 0.6rem;
+}
+.ndq-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; }
+.ndq-chip {
+	font-size: 11px; padding: 3px 10px; border-radius: 999px;
+	background: var(--ndq-surface); border: 1px solid var(--ndq-border);
+	color: var(--ndq-muted);
+}
+.ndq-chip.warn { border-color: var(--ndq-warning); color: var(--ndq-warning); font-weight: 600; }
+.ndq-chip.good { border-color: var(--ndq-success); color: var(--ndq-success); }
+
+/* ---------------------------------------------------------------- calendar */
+.ndq-colour-calendar .fc-event { border: 0; border-radius: var(--ndq-radius); }
+.ndq-colour-calendar .ndq-risk-high { box-shadow: inset 3px 0 0 var(--ndq-danger); }
+.ndq-colour-calendar .ndq-risk-medium { box-shadow: inset 3px 0 0 var(--ndq-warning); }
+
+/* ---------------------------------------------------------------- theme page preview */
+.ndq-preview {
+	border: 1px solid var(--bd, #e2e8f0); border-radius: 12px; overflow: hidden;
+	background: var(--bg, #fff);
+}
+.ndq-preview-hero {
+	padding: 14px 16px; color: #fff; display: flex; justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(120deg, var(--p) 0%, var(--s) 55%, var(--a) 100%);
+}
+.ndq-preview-hero strong { font-size: 16px; letter-spacing: -0.01em; }
+.ndq-preview-hero span { font-size: 12px; opacity: 0.9; }
+.ndq-preview-body { padding: 14px 16px; background: var(--sf, #fff); color: var(--tx); }
+.ndq-preview-body h6 { margin: 14px 0 6px; font-size: 11px; color: #64748b; }
+.ndq-swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+.ndq-swatch { text-align: center; }
+.ndq-swatch span {
+	display: block; width: 46px; height: 32px; border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.08); margin-bottom: 4px;
+}
+.ndq-swatch small { font-size: 10px; color: #64748b; }
+.ndq-swatch code { font-size: 9px; }
+.ndq-preview-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.ndq-preview-pill {
+	padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600;
+}
+.ndq-preview-card {
+	margin-top: 14px; padding: 10px 12px; border-radius: 10px;
+	border: 1px solid var(--bd); display: flex; align-items: center; gap: 8px;
+	font-size: 12px;
+}
+.ndq-preview-dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; }
+
+/* ---------------------------------------------------------------- dark */
+.ndq-dark.ndq-themed { color-scheme: dark; }
+.ndq-dark .ndq-legend-item,
+.ndq-dark .ndq-chip,
+.ndq-dark .ndq-perio-summary span { background: var(--ndq-surface); }
+
+@media (prefers-reduced-motion: reduce) {
+	.ndq-themed * { animation: none !important; transition: none !important; }
+}

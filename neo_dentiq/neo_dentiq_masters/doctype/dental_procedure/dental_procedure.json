@@ -1,0 +1,338 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "procedure_name",
+  "procedure_code",
+  "category",
+  "cb1",
+  "item",
+  "is_active",
+  "abbr",
+  "sb_clin",
+  "tooth_scope",
+  "default_duration",
+  "cleanup_minutes",
+  "cb2",
+  "requires_anaesthesia",
+  "requires_consent",
+  "requires_lab_case",
+  "requires_radiograph",
+  "is_surgical",
+  "sb_seq",
+  "clinical_pathway",
+  "default_visits",
+  "cb3",
+  "healing_days_before_next",
+  "warranty_months",
+  "sb_ster",
+  "instrument_kit",
+  "consumables",
+  "sb_fin",
+  "standard_rate",
+  "cost_estimate",
+  "cb4",
+  "lab_cost_estimate",
+  "income_account",
+  "sb_ins",
+  "default_insurance_code",
+  "requires_preauth",
+  "cb5",
+  "typical_coverage_percent",
+  "sb_edu",
+  "patient_description",
+  "post_op_instructions",
+  "risks"
+ ],
+ "fields": [
+  {
+   "fieldname": "procedure_name",
+   "fieldtype": "Data",
+   "label": "Procedure Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "procedure_code",
+   "fieldtype": "Link",
+   "label": "Procedure Code",
+   "options": "Dental Procedure Code",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Dental Procedure Category",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "ERPNext Item",
+   "options": "Item",
+   "description": "Service item used on Sales Invoice. Auto-created if blank."
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1"
+  },
+  {
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "label": "Chart Abbreviation",
+   "options": "desc=Shown inside the odontogram, e.g. RCT, CR, EXT"
+  },
+  {
+   "fieldname": "sb_clin",
+   "fieldtype": "Section Break",
+   "label": "Clinical Definition"
+  },
+  {
+   "fieldname": "tooth_scope",
+   "fieldtype": "Select",
+   "label": "Tooth Scope",
+   "options": "Whole Mouth\nPer Tooth\nPer Surface\nPer Quadrant\nPer Arch\nPer Root",
+   "default": "Per Tooth",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "default_duration",
+   "fieldtype": "Int",
+   "label": "Chair Time (min)",
+   "reqd": 1,
+   "default": "30"
+  },
+  {
+   "fieldname": "cleanup_minutes",
+   "fieldtype": "Int",
+   "label": "Turnover / Cleanup (min)",
+   "default": "10"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requires_anaesthesia",
+   "fieldtype": "Check",
+   "label": "Requires Anaesthesia"
+  },
+  {
+   "fieldname": "requires_consent",
+   "fieldtype": "Check",
+   "label": "Requires Signed Consent"
+  },
+  {
+   "fieldname": "requires_lab_case",
+   "fieldtype": "Check",
+   "label": "Requires Lab Case"
+  },
+  {
+   "fieldname": "requires_radiograph",
+   "fieldtype": "Check",
+   "label": "Requires Pre-op Radiograph"
+  },
+  {
+   "fieldname": "is_surgical",
+   "fieldtype": "Check",
+   "label": "Surgical"
+  },
+  {
+   "fieldname": "sb_seq",
+   "fieldtype": "Section Break",
+   "label": "Sequencing & Protocol"
+  },
+  {
+   "fieldname": "clinical_pathway",
+   "fieldtype": "Link",
+   "label": "Clinical Pathway",
+   "options": "Clinical Pathway"
+  },
+  {
+   "fieldname": "default_visits",
+   "fieldtype": "Int",
+   "label": "Typical Visits",
+   "default": "1"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "healing_days_before_next",
+   "fieldtype": "Int",
+   "label": "Healing Gap Before Next Visit (days)",
+   "default": "0"
+  },
+  {
+   "fieldname": "warranty_months",
+   "fieldtype": "Int",
+   "label": "Clinical Warranty (months)",
+   "default": "0"
+  },
+  {
+   "fieldname": "sb_ster",
+   "fieldtype": "Section Break",
+   "label": "Instruments & Consumables"
+  },
+  {
+   "fieldname": "instrument_kit",
+   "fieldtype": "Link",
+   "label": "Instrument Kit",
+   "options": "Instrument Kit"
+  },
+  {
+   "fieldname": "consumables",
+   "fieldtype": "Table",
+   "label": "Consumables",
+   "options": "Dental Procedure Consumable"
+  },
+  {
+   "fieldname": "sb_fin",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "standard_rate",
+   "fieldtype": "Currency",
+   "label": "Standard Fee",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cost_estimate",
+   "fieldtype": "Currency",
+   "label": "Internal Cost Estimate"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lab_cost_estimate",
+   "fieldtype": "Currency",
+   "label": "Lab Cost Estimate"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "sb_ins",
+   "fieldtype": "Section Break",
+   "label": "Insurance",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "default_insurance_code",
+   "fieldtype": "Data",
+   "label": "Default Payer Code"
+  },
+  {
+   "fieldname": "requires_preauth",
+   "fieldtype": "Check",
+   "label": "Requires Pre-Authorization"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "typical_coverage_percent",
+   "fieldtype": "Percent",
+   "label": "Typical Coverage %"
+  },
+  {
+   "fieldname": "sb_edu",
+   "fieldtype": "Section Break",
+   "label": "Patient Education",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "patient_description",
+   "fieldtype": "Text Editor",
+   "label": "Plain-language Description",
+   "description": "Shown to the patient in the portal and on the treatment plan PDF."
+  },
+  {
+   "fieldname": "post_op_instructions",
+   "fieldtype": "Text Editor",
+   "label": "Post-operative Instructions"
+  },
+  {
+   "fieldname": "risks",
+   "fieldtype": "Small Text",
+   "label": "Risks & Alternatives"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Masters",
+ "name": "Dental Procedure",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:procedure_name",
+ "title_field": "procedure_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "procedure_code,category",
+ "quick_entry": 1
+}

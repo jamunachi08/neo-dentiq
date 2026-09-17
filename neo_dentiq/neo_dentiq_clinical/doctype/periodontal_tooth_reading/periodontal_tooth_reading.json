@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tooth",
+  "is_missing",
+  "pd_db",
+  "pd_b",
+  "pd_mb",
+  "pd_dl",
+  "pd_l",
+  "pd_ml",
+  "rec_b",
+  "rec_l",
+  "cal_max",
+  "bop_db",
+  "bop_b",
+  "bop_mb",
+  "bop_dl",
+  "bop_l",
+  "bop_ml",
+  "plaque",
+  "suppuration",
+  "mobility",
+  "furcation",
+  "max_pd"
+ ],
+ "fields": [
+  {
+   "fieldname": "tooth",
+   "fieldtype": "Link",
+   "label": "Tooth",
+   "options": "Tooth Master",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "is_missing",
+   "fieldtype": "Check",
+   "label": "Missing",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_db",
+   "fieldtype": "Int",
+   "label": "PD DB",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_b",
+   "fieldtype": "Int",
+   "label": "PD B",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_mb",
+   "fieldtype": "Int",
+   "label": "PD MB",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_dl",
+   "fieldtype": "Int",
+   "label": "PD DL",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_l",
+   "fieldtype": "Int",
+   "label": "PD L",
+   "columns": 1
+  },
+  {
+   "fieldname": "pd_ml",
+   "fieldtype": "Int",
+   "label": "PD ML",
+   "columns": 1
+  },
+  {
+   "fieldname": "rec_b",
+   "fieldtype": "Int",
+   "label": "Rec B",
+   "columns": 1
+  },
+  {
+   "fieldname": "rec_l",
+   "fieldtype": "Int",
+   "label": "Rec L",
+   "columns": 1
+  },
+  {
+   "fieldname": "cal_max",
+   "fieldtype": "Int",
+   "label": "CAL Max",
+   "in_list_view": 1,
+   "columns": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "bop_db",
+   "fieldtype": "Check",
+   "label": "BOP DB",
+   "columns": 1
+  },
+  {
+   "fieldname": "bop_b",
+   "fieldtype": "Check",
+   "label": "BOP B",
+   "columns": 1
+  },
+  {
+   "fieldname": "bop_mb",
+   "fieldtype": "Check",
+   "label": "BOP MB",
+   "columns": 1
+  },
+  {
+   "fieldname": "bop_dl",
+   "fieldtype": "Check",
+   "label": "BOP DL",
+   "columns": 1
+  },
+  {
+   "fieldname": "bop_l",
+   "fieldtype": "Check",
+   "label": "BOP L",
+   "columns": 1
+  },
+  {
+   "fieldname": "bop_ml",
+   "fieldtype": "Check",
+   "label": "BOP ML",
+   "columns": 1
+  },
+  {
+   "fieldname": "plaque",
+   "fieldtype": "Check",
+   "label": "Plaque",
+   "columns": 1
+  },
+  {
+   "fieldname": "suppuration",
+   "fieldtype": "Check",
+   "label": "Suppuration",
+   "columns": 1
+  },
+  {
+   "fieldname": "mobility",
+   "fieldtype": "Select",
+   "label": "Mobility",
+   "options": "0\n1\n2\n3",
+   "default": "0",
+   "columns": 1
+  },
+  {
+   "fieldname": "furcation",
+   "fieldtype": "Select",
+   "label": "Furcation",
+   "options": "0\nI\nII\nIII",
+   "default": "0",
+   "columns": 1
+  },
+  {
+   "fieldname": "max_pd",
+   "fieldtype": "Int",
+   "label": "Max PD",
+   "in_list_view": 1,
+   "columns": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Periodontal Tooth Reading",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

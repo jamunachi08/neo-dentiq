@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "medication",
+  "strength",
+  "dosage",
+  "frequency",
+  "duration_days",
+  "quantity",
+  "route",
+  "instructions"
+ ],
+ "fields": [
+  {
+   "fieldname": "medication",
+   "fieldtype": "Link",
+   "label": "Medication",
+   "options": "Medication Master",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "strength",
+   "fieldtype": "Data",
+   "label": "Strength",
+   "in_list_view": 1,
+   "columns": 1,
+   "fetch_from": "medication.default_strength",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "dosage",
+   "fieldtype": "Data",
+   "label": "Dosage",
+   "in_list_view": 1,
+   "columns": 2,
+   "fetch_from": "medication.default_dosage",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency",
+   "in_list_view": 1,
+   "columns": 2,
+   "fetch_from": "medication.default_frequency",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "duration_days",
+   "fieldtype": "Int",
+   "label": "Days",
+   "in_list_view": 1,
+   "columns": 1,
+   "fetch_from": "medication.default_duration_days",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "columns": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "columns": 1,
+   "fetch_from": "medication.route",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Data",
+   "label": "Instructions",
+   "columns": 2
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Prescription Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "istable": 1,
+ "quick_entry": 1
+}

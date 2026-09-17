@@ -1,0 +1,131 @@
+{% extends "templates/web.html" %}
+{% block title %}Book a dental appointment{% endblock %}
+
+{% block page_content %}
+<div class="ndq-portal">
+	<h1>Book an appointment</h1>
+	<p class="lede">Pick a visit type, choose who you would like to see, and take a time
+		that suits you. We confirm by message the same day.</p>
+
+	<form id="ndq-booking" novalidate>
+		<div class="ndq-step">
+			<h2>What do you need?</h2>
+			<select class="form-control" id="appointment-type" required></select>
+		</div>
+
+		<div class="ndq-step">
+			<h2>Who would you like to see?</h2>
+			<select class="form-control" id="practitioner" required></select>
+		</div>
+
+		<div class="ndq-step">
+			<h2>Which day?</h2>
+			<input type="date" class="form-control" id="appointment-date" required>
+			<div class="ndq-slot-grid" id="slots" style="margin-top:1rem">
+				<p class="ndq-empty">Choose a day to see open times.</p>
+			</div>
+		</div>
+
+		<div class="ndq-step">
+			<h2>Your details</h2>
+			<div class="row">
+				<div class="col-sm-6"><input class="form-control" id="first-name"
+					placeholder="First name" required></div>
+				<div class="col-sm-6"><input class="form-control" id="last-name"
+					placeholder="Last name"></div>
+			</div>
+			<div class="row" style="margin-top:0.5rem">
+				<div class="col-sm-6"><input class="form-control" id="mobile"
+					placeholder="Mobile number" required></div>
+				<div class="col-sm-6"><input class="form-control" id="email"
+					type="email" placeholder="Email"></div>
+			</div>
+			<textarea class="form-control" id="reason" rows="2"
+				style="margin-top:0.5rem" placeholder="What is bothering you?"></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary" id="submit-booking">
+			Request this appointment</button>
+		<p id="booking-result" style="margin-top:1rem"></p>
+	</form>
+</div>
+
+<script>
+(function () {
+	const call = (method, args) => frappe.call({ method, args }).then(r => r.message);
+	let selectedSlot = null;
+
+	async function boot() {
+		const types = await call("neo_dentiq.api.booking.get_appointment_types",
+			{ new_patient: 1 });
+		document.getElementById("appointment-type").innerHTML = types
+			.map(t => `<option value="${t.name}">${t.appointment_type} · ${t.default_duration} min</option>`)
+			.join("");
+
+		const practitioners = await call("neo_dentiq.api.booking.get_practitioners", {});
+		document.getElementById("practitioner").innerHTML = practitioners
+			.map(p => `<option value="${p.name}">${p.practitioner_name}${p.speciality ? " · " + p.speciality : ""}</option>`)
+			.join("");
+	}
+
+	async function loadSlots() {
+		const date = document.getElementById("appointment-date").value;
+		const practitioner = document.getElementById("practitioner").value;
+		const container = document.getElementById("slots");
+		if (!date || !practitioner) return;
+		container.innerHTML = "<p class='ndq-empty'>Checking the diary…</p>";
+		const slots = await call("neo_dentiq.api.booking.get_slots", {
+			practitioner, date,
+			appointment_type: document.getElementById("appointment-type").value,
+		});
+		if (!slots.length) {
+			container.innerHTML = "<p class='ndq-empty'>Nothing free that day. Try another date.</p>";
+			return;
+		}
+		container.innerHTML = slots.map(s =>
+			`<button type="button" class="ndq-slot" aria-pressed="false"
+				data-time="${s.time}">${s.display}</button>`).join("");
+		container.querySelectorAll(".ndq-slot").forEach(btn => {
+			btn.addEventListener("click", () => {
+				container.querySelectorAll(".ndq-slot")
+					.forEach(b => b.setAttribute("aria-pressed", "false"));
+				btn.setAttribute("aria-pressed", "true");
+				selectedSlot = btn.dataset.time;
+			});
+		});
+	}
+
+	document.getElementById("appointment-date").addEventListener("change", loadSlots);
+	document.getElementById("practitioner").addEventListener("change", loadSlots);
+
+	document.getElementById("ndq-booking").addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const result = document.getElementById("booking-result");
+		if (!selectedSlot) {
+			result.textContent = "Pick a time first.";
+			return;
+		}
+		try {
+			const res = await call("neo_dentiq.api.booking.request_appointment", {
+				first_name: document.getElementById("first-name").value,
+				last_name: document.getElementById("last-name").value,
+				mobile: document.getElementById("mobile").value,
+				email: document.getElementById("email").value,
+				appointment_type: document.getElementById("appointment-type").value,
+				appointment_date: document.getElementById("appointment-date").value,
+				appointment_time: selectedSlot,
+				practitioner: document.getElementById("practitioner").value,
+				reason: document.getElementById("reason").value,
+			});
+			result.textContent = `Requested. Your reference is ${res.appointment}. ` +
+				"We will message you to confirm.";
+		} catch (err) {
+			result.textContent = "That slot was just taken. Pick another time.";
+			loadSlots();
+		}
+	});
+
+	boot();
+})();
+</script>
+{% endblock %}

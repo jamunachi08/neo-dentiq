@@ -1,0 +1,322 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "cb1",
+  "assessment_date",
+  "practitioner",
+  "age_group",
+  "sb_ind",
+  "cavitated_lesions",
+  "radiographic_lesions",
+  "cb2",
+  "white_spots",
+  "restorations_last_3_years",
+  "sb_rf",
+  "frequent_snacking",
+  "sugary_drinks",
+  "visible_plaque",
+  "deep_pits_fissures",
+  "cb3",
+  "dry_mouth",
+  "orthodontic_appliance",
+  "recreational_drug_use",
+  "exposed_roots",
+  "sb_pf",
+  "fluoridated_water",
+  "fluoride_toothpaste_2x",
+  "fluoride_varnish_6mo",
+  "cb4",
+  "chlorhexidine_use",
+  "xylitol_use",
+  "sealants_present",
+  "adequate_saliva",
+  "sb_res",
+  "risk_level",
+  "risk_score",
+  "cb5",
+  "recommended_recall_months",
+  "recommended_protocol"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CRA-.YYYY.-.#####",
+   "default": "CRA-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Practitioner",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age_group",
+   "fieldtype": "Select",
+   "label": "Age Group",
+   "options": "0-6\n6-18\nOver 18",
+   "default": "Over 18"
+  },
+  {
+   "fieldname": "sb_ind",
+   "fieldtype": "Section Break",
+   "label": "Disease Indicators"
+  },
+  {
+   "fieldname": "cavitated_lesions",
+   "fieldtype": "Check",
+   "label": "Visible Cavitated Lesions"
+  },
+  {
+   "fieldname": "radiographic_lesions",
+   "fieldtype": "Check",
+   "label": "Radiographic Interproximal Lesions"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "white_spots",
+   "fieldtype": "Check",
+   "label": "White Spot Lesions"
+  },
+  {
+   "fieldname": "restorations_last_3_years",
+   "fieldtype": "Check",
+   "label": "Restorations in Last 3 Years"
+  },
+  {
+   "fieldname": "sb_rf",
+   "fieldtype": "Section Break",
+   "label": "Risk Factors"
+  },
+  {
+   "fieldname": "frequent_snacking",
+   "fieldtype": "Check",
+   "label": "Frequent Snacking (>3/day)"
+  },
+  {
+   "fieldname": "sugary_drinks",
+   "fieldtype": "Check",
+   "label": "Sugary / Acidic Drinks"
+  },
+  {
+   "fieldname": "visible_plaque",
+   "fieldtype": "Check",
+   "label": "Visible Heavy Plaque"
+  },
+  {
+   "fieldname": "deep_pits_fissures",
+   "fieldtype": "Check",
+   "label": "Deep Pits & Fissures"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dry_mouth",
+   "fieldtype": "Check",
+   "label": "Xerostomia / Reduced Salivary Flow"
+  },
+  {
+   "fieldname": "orthodontic_appliance",
+   "fieldtype": "Check",
+   "label": "Orthodontic Appliance"
+  },
+  {
+   "fieldname": "recreational_drug_use",
+   "fieldtype": "Check",
+   "label": "Recreational Drug Use"
+  },
+  {
+   "fieldname": "exposed_roots",
+   "fieldtype": "Check",
+   "label": "Exposed Root Surfaces"
+  },
+  {
+   "fieldname": "sb_pf",
+   "fieldtype": "Section Break",
+   "label": "Protective Factors"
+  },
+  {
+   "fieldname": "fluoridated_water",
+   "fieldtype": "Check",
+   "label": "Fluoridated Water"
+  },
+  {
+   "fieldname": "fluoride_toothpaste_2x",
+   "fieldtype": "Check",
+   "label": "Fluoride Toothpaste 2x Daily"
+  },
+  {
+   "fieldname": "fluoride_varnish_6mo",
+   "fieldtype": "Check",
+   "label": "Fluoride Varnish Last 6 Months"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chlorhexidine_use",
+   "fieldtype": "Check",
+   "label": "Chlorhexidine Rinse"
+  },
+  {
+   "fieldname": "xylitol_use",
+   "fieldtype": "Check",
+   "label": "Xylitol Use"
+  },
+  {
+   "fieldname": "sealants_present",
+   "fieldtype": "Check",
+   "label": "Sealants Present"
+  },
+  {
+   "fieldname": "adequate_saliva",
+   "fieldtype": "Check",
+   "label": "Adequate Salivary Flow"
+  },
+  {
+   "fieldname": "sb_res",
+   "fieldtype": "Section Break",
+   "label": "Result (CAMBRA)"
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Caries Risk",
+   "options": "Low\nModerate\nHigh\nExtreme",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "risk_score",
+   "fieldtype": "Int",
+   "label": "Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommended_recall_months",
+   "fieldtype": "Int",
+   "label": "Recommended Recall (months)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recommended_protocol",
+   "fieldtype": "Small Text",
+   "label": "Recommended Protocol",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Caries Risk Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

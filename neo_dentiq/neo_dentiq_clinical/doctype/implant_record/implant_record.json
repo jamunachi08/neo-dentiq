@@ -1,0 +1,357 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "tooth",
+  "cb1",
+  "placement_date",
+  "practitioner",
+  "clinical_procedure",
+  "sb_dev",
+  "item_code",
+  "brand",
+  "udi_di",
+  "udi_pi",
+  "cb2",
+  "serial_no",
+  "batch_no",
+  "expiry_date",
+  "sb_spec",
+  "diameter_mm",
+  "length_mm",
+  "platform",
+  "cb3",
+  "surface_treatment",
+  "insertion_torque_ncm",
+  "isq_value",
+  "sb_surg",
+  "bone_quality",
+  "grafting_done",
+  "graft_material",
+  "cb4",
+  "membrane_used",
+  "sinus_lift",
+  "loading_protocol",
+  "sb_fu",
+  "status",
+  "restoration_date",
+  "warranty_expiry",
+  "cb5",
+  "failure_date",
+  "failure_reason",
+  "passport_issued"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "IMP-.YYYY.-.#####",
+   "default": "IMP-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tooth",
+   "fieldtype": "Link",
+   "label": "Site (Tooth)",
+   "options": "Tooth Master",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "placement_date",
+   "fieldtype": "Date",
+   "label": "Placement Date",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Surgeon",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "clinical_procedure",
+   "fieldtype": "Link",
+   "label": "Procedure",
+   "options": "Clinical Procedure"
+  },
+  {
+   "fieldname": "sb_dev",
+   "fieldtype": "Section Break",
+   "label": "Device Identification (UDI)"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Implant Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "label": "Brand / System",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "udi_di",
+   "fieldtype": "Data",
+   "label": "UDI-DI",
+   "description": "Device Identifier from the GS1 barcode."
+  },
+  {
+   "fieldname": "udi_pi",
+   "fieldtype": "Data",
+   "label": "UDI-PI",
+   "options": "desc=Production Identifier \u2014 lot, serial, expiry."
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch / Lot",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "sb_spec",
+   "fieldtype": "Section Break",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "diameter_mm",
+   "fieldtype": "Float",
+   "label": "Diameter (mm)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "length_mm",
+   "fieldtype": "Float",
+   "label": "Length (mm)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "platform",
+   "fieldtype": "Data",
+   "label": "Connection / Platform"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "surface_treatment",
+   "fieldtype": "Data",
+   "label": "Surface Treatment"
+  },
+  {
+   "fieldname": "insertion_torque_ncm",
+   "fieldtype": "Float",
+   "label": "Insertion Torque (Ncm)"
+  },
+  {
+   "fieldname": "isq_value",
+   "fieldtype": "Float",
+   "label": "ISQ / Stability Value"
+  },
+  {
+   "fieldname": "sb_surg",
+   "fieldtype": "Section Break",
+   "label": "Surgical Detail"
+  },
+  {
+   "fieldname": "bone_quality",
+   "fieldtype": "Select",
+   "label": "Bone Quality",
+   "options": "D1\nD2\nD3\nD4"
+  },
+  {
+   "fieldname": "grafting_done",
+   "fieldtype": "Check",
+   "label": "Bone Graft Performed"
+  },
+  {
+   "fieldname": "graft_material",
+   "fieldtype": "Link",
+   "label": "Graft Material",
+   "options": "Item",
+   "depends_on": "eval:doc.grafting_done"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "membrane_used",
+   "fieldtype": "Check",
+   "label": "Membrane Used"
+  },
+  {
+   "fieldname": "sinus_lift",
+   "fieldtype": "Check",
+   "label": "Sinus Lift"
+  },
+  {
+   "fieldname": "loading_protocol",
+   "fieldtype": "Select",
+   "label": "Loading",
+   "options": "Immediate\nEarly\nConventional",
+   "default": "Conventional"
+  },
+  {
+   "fieldname": "sb_fu",
+   "fieldtype": "Section Break",
+   "label": "Follow-up & Outcome"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Placed\nOsseointegrated\nLoaded\nFailed\nExplanted",
+   "default": "Placed",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "restoration_date",
+   "fieldtype": "Date",
+   "label": "Restoration Date"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Warranty Expiry"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "failure_date",
+   "fieldtype": "Date",
+   "label": "Failure Date",
+   "doc.status": "='Explanted'",
+   "depends_on": "eval:doc.status=='Failed'"
+  },
+  {
+   "fieldname": "failure_reason",
+   "fieldtype": "Small Text",
+   "label": "Failure Reason",
+   "doc.status": "='Explanted'",
+   "depends_on": "eval:doc.status=='Failed'"
+  },
+  {
+   "fieldname": "passport_issued",
+   "fieldtype": "Check",
+   "label": "Implant Passport Issued to Patient"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Implant Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

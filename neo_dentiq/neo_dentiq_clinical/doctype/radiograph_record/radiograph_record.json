@@ -1,0 +1,283 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "radiograph_type",
+  "cb1",
+  "exposure_datetime",
+  "practitioner",
+  "operator",
+  "clinic",
+  "sb_just",
+  "justification",
+  "teeth_region",
+  "cb2",
+  "effective_dose_msv",
+  "is_repeat",
+  "repeat_reason",
+  "sb_img",
+  "image_file",
+  "pacs_study_uid",
+  "cb3",
+  "pacs_url",
+  "sb_find",
+  "findings",
+  "sb_ai",
+  "ai_analysis_status",
+  "ai_findings",
+  "ai_confidence",
+  "cb4",
+  "clinician_agrees",
+  "ai_overlay"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "IMG-.YYYY.-.#####",
+   "default": "IMG-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "radiograph_type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Radiograph Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exposure_datetime",
+   "fieldtype": "Datetime",
+   "label": "Exposure Date",
+   "in_list_view": 1,
+   "reqd": 1,
+   "default": "Now"
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Ordered By",
+   "options": "Dental Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Data",
+   "label": "Operator / Radiographer"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Dental Clinic"
+  },
+  {
+   "fieldname": "sb_just",
+   "fieldtype": "Section Break",
+   "label": "Justification (IR(ME)R / ALARA)"
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Small Text",
+   "label": "Clinical Justification",
+   "reqd": 1
+  },
+  {
+   "fieldname": "teeth_region",
+   "fieldtype": "Data",
+   "label": "Region / Teeth"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "effective_dose_msv",
+   "fieldtype": "Float",
+   "label": "Effective Dose (mSv)",
+   "precision": "4",
+   "fetch_from": "radiograph_type.effective_dose_msv",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_repeat",
+   "fieldtype": "Check",
+   "label": "Repeat Exposure"
+  },
+  {
+   "fieldname": "repeat_reason",
+   "fieldtype": "Small Text",
+   "label": "Repeat Reason",
+   "depends_on": "eval:doc.is_repeat"
+  },
+  {
+   "fieldname": "sb_img",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "image_file",
+   "fieldtype": "Attach",
+   "label": "Image / DICOM"
+  },
+  {
+   "fieldname": "pacs_study_uid",
+   "fieldtype": "Data",
+   "label": "PACS Study UID"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pacs_url",
+   "fieldtype": "Data",
+   "label": "PACS Viewer URL"
+  },
+  {
+   "fieldname": "sb_find",
+   "fieldtype": "Section Break",
+   "label": "Findings"
+  },
+  {
+   "fieldname": "findings",
+   "fieldtype": "Text Editor",
+   "label": "Radiological Findings"
+  },
+  {
+   "fieldname": "sb_ai",
+   "fieldtype": "Section Break",
+   "label": "AI Detection",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "ai_analysis_status",
+   "fieldtype": "Select",
+   "label": "AI Status",
+   "options": "Not Run\nQueued\nCompleted\nFailed",
+   "default": "Not Run",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ai_findings",
+   "fieldtype": "Small Text",
+   "label": "AI Findings",
+   "description": "Caries, periapical radiolucency, bone-level and calculus detection from the configured inference endpoint.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ai_confidence",
+   "fieldtype": "Percent",
+   "label": "AI Confidence",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "clinician_agrees",
+   "fieldtype": "Check",
+   "label": "Clinician Concurs"
+  },
+  {
+   "fieldname": "ai_overlay",
+   "fieldtype": "Attach",
+   "label": "AI Overlay Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Radiograph Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

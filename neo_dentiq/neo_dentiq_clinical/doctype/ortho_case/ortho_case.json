@@ -1,0 +1,311 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient",
+  "patient_name",
+  "cb1",
+  "start_date",
+  "practitioner",
+  "estimated_end_date",
+  "actual_end_date",
+  "sb_diag",
+  "appliance_type",
+  "angle_classification",
+  "overjet_mm",
+  "overbite_percent",
+  "cb2",
+  "crowding_upper_mm",
+  "crowding_lower_mm",
+  "extraction_required",
+  "extraction_teeth",
+  "sb_plan",
+  "total_stages",
+  "current_stage",
+  "progress_percent",
+  "cb3",
+  "status",
+  "retention_type",
+  "review_interval_weeks",
+  "sb_visits",
+  "visits",
+  "sb_fin",
+  "total_fee",
+  "payment_plan",
+  "cb4",
+  "amount_collected",
+  "outstanding"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ORTHO-.YYYY.-.#####",
+   "default": "ORTHO-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient",
+   "in_list_view": 1,
+   "fetch_from": "patient.patient_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner",
+   "fieldtype": "Link",
+   "label": "Orthodontist",
+   "options": "Dental Practitioner",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "estimated_end_date",
+   "fieldtype": "Date",
+   "label": "Estimated Completion"
+  },
+  {
+   "fieldname": "actual_end_date",
+   "fieldtype": "Date",
+   "label": "Actual Completion"
+  },
+  {
+   "fieldname": "sb_diag",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "appliance_type",
+   "fieldtype": "Select",
+   "label": "Appliance",
+   "options": "Fixed Metal\nFixed Ceramic\nLingual\nClear Aligners\nFunctional\nRemovable\nTAD-assisted",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "angle_classification",
+   "fieldtype": "Select",
+   "label": "Angle Class",
+   "options": "Class I\nClass II Div 1\nClass II Div 2\nClass III"
+  },
+  {
+   "fieldname": "overjet_mm",
+   "fieldtype": "Float",
+   "label": "Overjet (mm)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "overbite_percent",
+   "fieldtype": "Percent",
+   "label": "Overbite %"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crowding_upper_mm",
+   "fieldtype": "Float",
+   "label": "Crowding Upper (mm)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "crowding_lower_mm",
+   "fieldtype": "Float",
+   "label": "Crowding Lower (mm)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "extraction_required",
+   "fieldtype": "Check",
+   "label": "Extraction Case"
+  },
+  {
+   "fieldname": "extraction_teeth",
+   "fieldtype": "Data",
+   "label": "Extraction Teeth",
+   "depends_on": "eval:doc.extraction_required"
+  },
+  {
+   "fieldname": "sb_plan",
+   "fieldtype": "Section Break",
+   "label": "Treatment"
+  },
+  {
+   "fieldname": "total_stages",
+   "fieldtype": "Int",
+   "label": "Total Stages / Aligners"
+  },
+  {
+   "fieldname": "current_stage",
+   "fieldtype": "Int",
+   "label": "Current Stage"
+  },
+  {
+   "fieldname": "progress_percent",
+   "fieldtype": "Percent",
+   "label": "Progress %",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planning\nActive\nRetention\nCompleted\nDiscontinued",
+   "default": "Planning",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "retention_type",
+   "fieldtype": "Select",
+   "label": "Retention",
+   "options": "Fixed\nRemovable\nBoth"
+  },
+  {
+   "fieldname": "review_interval_weeks",
+   "fieldtype": "Int",
+   "label": "Review Interval (weeks)",
+   "default": "6"
+  },
+  {
+   "fieldname": "sb_visits",
+   "fieldtype": "Section Break",
+   "label": "Visit Log"
+  },
+  {
+   "fieldname": "visits",
+   "fieldtype": "Table",
+   "label": "Visits",
+   "options": "Ortho Visit"
+  },
+  {
+   "fieldname": "sb_fin",
+   "fieldtype": "Section Break",
+   "label": "Financials"
+  },
+  {
+   "fieldname": "total_fee",
+   "fieldtype": "Currency",
+   "label": "Total Case Fee"
+  },
+  {
+   "fieldname": "payment_plan",
+   "fieldtype": "Link",
+   "label": "Payment Plan",
+   "options": "Patient Payment Plan"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_collected",
+   "fieldtype": "Currency",
+   "label": "Collected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding",
+   "fieldtype": "Currency",
+   "label": "Outstanding",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Clinical",
+ "name": "Ortho Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Neo Dentiq Manager",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dentist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Dental Hygienist",
+   "read": 1,
+   "create": 1,
+   "write": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Front Desk",
+   "read": 1,
+   "create": 0,
+   "write": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "title_field": "patient_name",
+ "show_title_field_in_link": 1,
+ "quick_entry": 1
+}

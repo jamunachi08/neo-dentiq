@@ -1,0 +1,170 @@
+{
+ "charts": [
+  {
+   "chart_name": "Sterilization Cycle Results",
+   "label": "Sterilization Cycle Results"
+  }
+ ],
+ "content": "[{\"id\": \"371be5cd93\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"a8a3d96ce5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Log Cycle\", \"col\": 3}}, {\"id\": \"aa7642a893\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tray Status\", \"col\": 3}}, {\"id\": \"fed0c1ae30\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"7dda1c8dd2\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"78bc7f97ae\", \"type\": \"card\", \"data\": {\"card_name\": \"Sterilisation\", \"col\": 4}}, {\"id\": \"7c17dcc606\", \"type\": \"card\", \"data\": {\"card_name\": \"Governance\", \"col\": 4}}, {\"id\": \"6392c2f1c6\", \"type\": \"card\", \"data\": {\"card_name\": \"Reports\", \"col\": 4}}, {\"id\": \"c7b56df7dc\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Insights</b></span>\", \"col\": 12}}, {\"id\": \"3fc4f120ab\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Sterilization Cycle Results\", \"col\": 6}}]",
+ "creation": "2026-01-01 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "shield",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Compliance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sterilisation",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sterilization Cycle",
+   "link_to": "Sterilization Cycle",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Instrument Tray",
+   "link_to": "Instrument Tray",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Biological Indicator Test",
+   "link_to": "Biological Indicator Test",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Infection Control Log",
+   "link_to": "Infection Control Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Governance",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clinical Incident",
+   "link_to": "Clinical Incident",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Equipment Maintenance Log",
+   "link_to": "Equipment Maintenance Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sterilizer",
+   "link_to": "Sterilizer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Instrument Kit",
+   "link_to": "Instrument Kit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sterilisation Traceability Audit",
+   "link_to": "Sterilisation Traceability Audit",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Material and Implant Traceability",
+   "link_to": "Material and Implant Traceability",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neo Dentiq Compliance",
+ "name": "Neo Dentiq Compliance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 4,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "label": "Log Cycle",
+   "link_to": "Sterilization Cycle",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "label": "Tray Status",
+   "link_to": "Instrument Tray",
+   "type": "DocType"
+  }
+ ],
+ "title": "Compliance"
+}
